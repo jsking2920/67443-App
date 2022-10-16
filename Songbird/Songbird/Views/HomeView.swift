@@ -12,8 +12,13 @@ struct HomeView: View {
 		TabView {
 			UsersView()
 			.tabItem {
-					Image(systemName: "books.vertical")
-					Text("Users")
+				Image(systemName: "books.vertical")
+				Text("Users")
+			}
+			SongView()
+			.tabItem {
+				Image(systemName: "rectangle.stack.badge.plus")
+				Text("Song")
 			}
 		}
 	}

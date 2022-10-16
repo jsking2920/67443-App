@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */; };
-		C9888AEF28FB9619002C17A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEE28FB9619002C17A7 /* ContentView.swift */; };
+		C9888AEF28FB9619002C17A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEE28FB9619002C17A7 /* HomeView.swift */; };
 		C9888AF128FB9620002C17A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9888AF028FB9620002C17A7 /* Assets.xcassets */; };
 		C9888AF428FB9620002C17A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9888AF328FB9620002C17A7 /* Preview Assets.xcassets */; };
 		C9888AFC28FBA054002C17A7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C9888AFB28FBA054002C17A7 /* FirebaseFirestore */; };
 		C9888AFE28FBA054002C17A7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9888AFD28FBA054002C17A7 /* FirebaseFirestoreSwift */; };
 		C9888B0128FBA126002C17A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C9888B0028FBA126002C17A7 /* Alamofire */; };
+		C9888B0328FBAD42002C17A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */; };
+		C9888B0728FBB9F6002C17A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0628FBB9F6002C17A7 /* User.swift */; };
+		C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0928FBBAF5002C17A7 /* UserCollection.swift */; };
+		C9888B0E28FBBE86002C17A7 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0D28FBBE86002C17A7 /* UsersView.swift */; };
+		C9888B1028FBBF51002C17A7 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0F28FBBF51002C17A7 /* UserRowView.swift */; };
+		C9888B1328FBBFF9002C17A7 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B1228FBBFF9002C17A7 /* UserDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C9888AE928FB9619002C17A7 /* Songbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Songbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongbirdApp.swift; sourceTree = "<group>"; };
-		C9888AEE28FB9619002C17A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C9888AEE28FB9619002C17A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9888AF028FB9620002C17A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9888AF328FB9620002C17A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9888B0628FBB9F6002C17A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C9888B0928FBBAF5002C17A7 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
+		C9888B0D28FBBE86002C17A7 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		C9888B0F28FBBF51002C17A7 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
+		C9888B1228FBBFF9002C17A7 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +69,10 @@
 		C9888AEB28FB9619002C17A7 /* Songbird */ = {
 			isa = PBXGroup;
 			children = (
+				C9888B0528FBB9CD002C17A7 /* Views */,
+				C9888B0428FBB9C7002C17A7 /* Models */,
+				C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */,
 				C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */,
-				C9888AEE28FB9619002C17A7 /* ContentView.swift */,
 				C9888AF028FB9620002C17A7 /* Assets.xcassets */,
 				C9888AF228FB9620002C17A7 /* Preview Content */,
 			);
@@ -71,6 +85,42 @@
 				C9888AF328FB9620002C17A7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9888B0428FBB9C7002C17A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9888B0828FBBAD8002C17A7 /* FirebaseCollections */,
+				C9888B0628FBB9F6002C17A7 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9888B0528FBB9CD002C17A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9888B1128FBBFDD002C17A7 /* Users */,
+				C9888AEE28FB9619002C17A7 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9888B0828FBBAD8002C17A7 /* FirebaseCollections */ = {
+			isa = PBXGroup;
+			children = (
+				C9888B0928FBBAF5002C17A7 /* UserCollection.swift */,
+			);
+			path = FirebaseCollections;
+			sourceTree = "<group>";
+		};
+		C9888B1128FBBFDD002C17A7 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				C9888B0D28FBBE86002C17A7 /* UsersView.swift */,
+				C9888B0F28FBBF51002C17A7 /* UserRowView.swift */,
+				C9888B1228FBBFF9002C17A7 /* UserDetailsView.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +192,7 @@
 			files = (
 				C9888AF428FB9620002C17A7 /* Preview Assets.xcassets in Resources */,
 				C9888AF128FB9620002C17A7 /* Assets.xcassets in Resources */,
+				C9888B0328FBAD42002C17A7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9888AEF28FB9619002C17A7 /* ContentView.swift in Sources */,
+				C9888B0E28FBBE86002C17A7 /* UsersView.swift in Sources */,
+				C9888AEF28FB9619002C17A7 /* HomeView.swift in Sources */,
 				C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */,
+				C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */,
+				C9888B1328FBBFF9002C17A7 /* UserDetailsView.swift in Sources */,
+				C9888B1028FBBF51002C17A7 /* UserRowView.swift in Sources */,
+				C9888B0728FBB9F6002C17A7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

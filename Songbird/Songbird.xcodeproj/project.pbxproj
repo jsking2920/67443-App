@@ -26,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C978D098290734B20077CA6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9888AE928FB9619002C17A7 /* Songbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Songbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongbirdApp.swift; sourceTree = "<group>"; };
 		C9888AEE28FB9619002C17A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		C9888AEB28FB9619002C17A7 /* Songbird */ = {
 			isa = PBXGroup;
 			children = (
+				C978D098290734B20077CA6C /* Info.plist */,
 				C9888B0528FBB9CD002C17A7 /* Views */,
 				C9888B0428FBB9C7002C17A7 /* Models */,
 				C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */,
@@ -355,6 +357,7 @@
 				DEVELOPMENT_TEAM = J7782HF2UB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Songbird/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -384,6 +387,7 @@
 				DEVELOPMENT_TEAM = J7782HF2UB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Songbird/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

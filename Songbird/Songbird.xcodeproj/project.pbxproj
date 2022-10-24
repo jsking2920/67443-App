@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C978D09B29073D190077CA6C /* SpotifyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = C978D09A29073D190077CA6C /* SpotifyAPI */; };
+		C978D09D290743AE0077CA6C /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D09C290743AE0077CA6C /* Spotify.swift */; };
+		C978D0A02907456B0077CA6C /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C978D09F2907456B0077CA6C /* KeychainAccess */; };
 		C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */; };
 		C9888AEF28FB9619002C17A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEE28FB9619002C17A7 /* HomeView.swift */; };
 		C9888AF128FB9620002C17A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9888AF028FB9620002C17A7 /* Assets.xcassets */; };
@@ -28,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		C978D098290734B20077CA6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C978D09C290743AE0077CA6C /* Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
 		C9888AE928FB9619002C17A7 /* Songbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Songbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongbirdApp.swift; sourceTree = "<group>"; };
 		C9888AEE28FB9619002C17A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 				C9888AFC28FBA054002C17A7 /* FirebaseFirestore in Frameworks */,
 				C978D09B29073D190077CA6C /* SpotifyAPI in Frameworks */,
 				C9888AFE28FBA054002C17A7 /* FirebaseFirestoreSwift in Frameworks */,
+				C978D0A02907456B0077CA6C /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 				C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */,
 				C9888AF028FB9620002C17A7 /* Assets.xcassets */,
 				C9888AF228FB9620002C17A7 /* Preview Content */,
+				C978D09C290743AE0077CA6C /* Spotify.swift */,
 			);
 			path = Songbird;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				C9888AFD28FBA054002C17A7 /* FirebaseFirestoreSwift */,
 				C9888B0028FBA126002C17A7 /* Alamofire */,
 				C978D09A29073D190077CA6C /* SpotifyAPI */,
+				C978D09F2907456B0077CA6C /* KeychainAccess */,
 			);
 			productName = Songbird;
 			productReference = C9888AE928FB9619002C17A7 /* Songbird.app */;
@@ -190,6 +196,7 @@
 				C9888AFA28FBA054002C17A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				C9888AFF28FBA126002C17A7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				C978D09929073D190077CA6C /* XCRemoteSwiftPackageReference "SpotifyAPI" */,
+				C978D09E2907456B0077CA6C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = C9888AEA28FB9619002C17A7 /* Products */;
 			projectDirPath = "";
@@ -227,6 +234,7 @@
 				C9888B1328FBBFF9002C17A7 /* UserDetailsView.swift in Sources */,
 				C9888B1928FBCAD0002C17A7 /* SongView.swift in Sources */,
 				C9888B1028FBBF51002C17A7 /* UserRowView.swift in Sources */,
+				C978D09D290743AE0077CA6C /* Spotify.swift in Sources */,
 				C9888B0728FBB9F6002C17A7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +450,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		C978D09E2907456B0077CA6C /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		C9888AFA28FBA054002C17A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -465,6 +481,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C978D09929073D190077CA6C /* XCRemoteSwiftPackageReference "SpotifyAPI" */;
 			productName = SpotifyAPI;
+		};
+		C978D09F2907456B0077CA6C /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C978D09E2907456B0077CA6C /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 		C9888AFB28FBA054002C17A7 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;

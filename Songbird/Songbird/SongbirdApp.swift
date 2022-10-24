@@ -7,6 +7,8 @@
 
 import SwiftUI
 import FirebaseCore
+import Combine
+import SpotifyWebAPI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
 	func application(_ application: UIApplication,
@@ -21,13 +23,16 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct YourApp: App {
 	// register app delegate for Firebase setup
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+	// Set up helper class for spotify authorization
+	@StateObject var spotify = Spotify()
+	
+	init() {
+		SpotifyAPILogHandler.bootstrap()
+	}
 
 	var body: some Scene {
 		WindowGroup {
-			NavigationView {
-				//HomeView()
-				SongView()
-			}
+			RootView().environmentObject(spotify)
 		}
 	}
 }

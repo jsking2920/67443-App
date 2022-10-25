@@ -1,9 +1,3 @@
-//
-//  Spotify.swift
-//  Songbird
-//
-//  Created by Scott King on 10/24/22.
-//
 // Taken from: https://github.com/Peter-Schorn/SpotifyAPIExampleApp/blob/main/SpotifyAPIExampleApp/Model/Spotify.swift
 // by Peter Schorn
 
@@ -45,7 +39,7 @@ final class Spotify: ObservableObject {
 		/// The URL that Spotify will redirect to after the user either authorizes
 		/// or denies authorization for your application.
 		let loginCallbackURL = URL(
-				string: "spotify-api-example-app://login-callback"
+				string: "songbird://login-callback"
 		)!
 		
 		/// A cryptographically-secure random string used to ensure than an incoming
@@ -78,7 +72,7 @@ final class Spotify: ObservableObject {
 		@Published var currentUser: SpotifyUser? = nil
 		
 		/// The keychain to store the authorization information in.
-		let keychain = Keychain(service: "com.Peter-Schorn.SpotifyAPIExampleApp")
+		let keychain = Keychain(service: "com.443-f22-team20.Songbird")
 		
 		/// An instance of `SpotifyAPI` that you use to make requests to the Spotify
 		/// web API.

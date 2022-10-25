@@ -32,7 +32,6 @@
 		C9888AF128FB9620002C17A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9888AF028FB9620002C17A7 /* Assets.xcassets */; };
 		C9888AFC28FBA054002C17A7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C9888AFB28FBA054002C17A7 /* FirebaseFirestore */; };
 		C9888AFE28FBA054002C17A7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9888AFD28FBA054002C17A7 /* FirebaseFirestoreSwift */; };
-		C9888B0128FBA126002C17A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C9888B0028FBA126002C17A7 /* Alamofire */; };
 		C9888B0328FBAD42002C17A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */; };
 		C9888B0728FBB9F6002C17A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0628FBB9F6002C17A7 /* User.swift */; };
 		C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0928FBBAF5002C17A7 /* UserCollection.swift */; };
@@ -78,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9888B0128FBA126002C17A7 /* Alamofire in Frameworks */,
 				C9888AFC28FBA054002C17A7 /* FirebaseFirestore in Frameworks */,
 				C978D09B29073D190077CA6C /* SpotifyAPI in Frameworks */,
 				C9888AFE28FBA054002C17A7 /* FirebaseFirestoreSwift in Frameworks */,
@@ -255,7 +253,6 @@
 			packageProductDependencies = (
 				C9888AFB28FBA054002C17A7 /* FirebaseFirestore */,
 				C9888AFD28FBA054002C17A7 /* FirebaseFirestoreSwift */,
-				C9888B0028FBA126002C17A7 /* Alamofire */,
 				C978D09A29073D190077CA6C /* SpotifyAPI */,
 				C978D09F2907456B0077CA6C /* KeychainAccess */,
 			);
@@ -289,7 +286,6 @@
 			mainGroup = C9888AE028FB9619002C17A7;
 			packageReferences = (
 				C9888AFA28FBA054002C17A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				C9888AFF28FBA126002C17A7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				C978D09929073D190077CA6C /* XCRemoteSwiftPackageReference "SpotifyAPI" */,
 				C978D09E2907456B0077CA6C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
@@ -574,14 +570,6 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		C9888AFF28FBA126002C17A7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -604,11 +592,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9888AFA28FBA054002C17A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
-		};
-		C9888B0028FBA126002C17A7 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9888AFF28FBA126002C17A7 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

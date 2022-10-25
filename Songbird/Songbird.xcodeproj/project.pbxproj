@@ -11,7 +11,7 @@
 		C978D09D290743AE0077CA6C /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D09C290743AE0077CA6C /* Spotify.swift */; };
 		C978D0A02907456B0077CA6C /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C978D09F2907456B0077CA6C /* KeychainAccess */; };
 		C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */; };
-		C9888AEF28FB9619002C17A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEE28FB9619002C17A7 /* HomeView.swift */; };
+		C9888AEF28FB9619002C17A7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEE28FB9619002C17A7 /* RootView.swift */; };
 		C9888AF128FB9620002C17A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9888AF028FB9620002C17A7 /* Assets.xcassets */; };
 		C9888AF428FB9620002C17A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9888AF328FB9620002C17A7 /* Preview Assets.xcassets */; };
 		C9888AFC28FBA054002C17A7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C9888AFB28FBA054002C17A7 /* FirebaseFirestore */; };
@@ -33,7 +33,7 @@
 		C978D09C290743AE0077CA6C /* Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
 		C9888AE928FB9619002C17A7 /* Songbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Songbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongbirdApp.swift; sourceTree = "<group>"; };
-		C9888AEE28FB9619002C17A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C9888AEE28FB9619002C17A7 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C9888AF028FB9620002C17A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9888AF328FB9620002C17A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				C9888B1128FBBFDD002C17A7 /* Users */,
-				C9888AEE28FB9619002C17A7 /* HomeView.swift */,
+				C9888AEE28FB9619002C17A7 /* RootView.swift */,
 				C9888B1828FBCAD0002C17A7 /* SongView.swift */,
 			);
 			path = Views;
@@ -227,7 +227,7 @@
 			files = (
 				C9888B0E28FBBE86002C17A7 /* UsersView.swift in Sources */,
 				C9888B1728FBC80B002C17A7 /* SpotifyParser.swift in Sources */,
-				C9888AEF28FB9619002C17A7 /* HomeView.swift in Sources */,
+				C9888AEF28FB9619002C17A7 /* RootView.swift in Sources */,
 				C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */,
 				C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */,
 				C9888B1528FBC6F1002C17A7 /* Song.swift in Sources */,

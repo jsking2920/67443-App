@@ -38,6 +38,8 @@
 		C9888B0E28FBBE86002C17A7 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0D28FBBE86002C17A7 /* UsersView.swift */; };
 		C9888B1028FBBF51002C17A7 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0F28FBBF51002C17A7 /* UserRowView.swift */; };
 		C9888B1328FBBFF9002C17A7 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B1228FBBFF9002C17A7 /* UserDetailsView.swift */; };
+		C996E547290B85BC00E8B2F2 /* DailySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = C996E546290B85BC00E8B2F2 /* DailySong.swift */; };
+		C996E549290B86D300E8B2F2 /* DailySongCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C996E548290B86D300E8B2F2 /* DailySongCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		C9888B0D28FBBE86002C17A7 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		C9888B0F28FBBF51002C17A7 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 		C9888B1228FBBFF9002C17A7 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		C996E546290B85BC00E8B2F2 /* DailySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySong.swift; sourceTree = "<group>"; };
+		C996E548290B86D300E8B2F2 /* DailySongCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 			children = (
 				C9888B0828FBBAD8002C17A7 /* FirebaseCollections */,
 				C9888B0628FBB9F6002C17A7 /* User.swift */,
+				C996E546290B85BC00E8B2F2 /* DailySong.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				C9888B0928FBBAF5002C17A7 /* UserCollection.swift */,
+				C996E548290B86D300E8B2F2 /* DailySongCollection.swift */,
 			);
 			path = FirebaseCollections;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				C978D0D1290787B50077CA6C /* AlertItem.swift in Sources */,
 				C978D0BF290786CE0077CA6C /* SearchForTracksView.swift in Sources */,
 				C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */,
+				C996E547290B85BC00E8B2F2 /* DailySong.swift in Sources */,
 				C978D0D0290787B50077CA6C /* SpotifyAPIExtensions.swift in Sources */,
 				C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */,
 				C978D0BC290786CE0077CA6C /* DebugMenuView.swift in Sources */,
@@ -337,6 +344,7 @@
 				C978D0CF290787B50077CA6C /* ImageNames.swift in Sources */,
 				C978D09D290743AE0077CA6C /* Spotify.swift in Sources */,
 				C978D0BE290786CE0077CA6C /* LoginView.swift in Sources */,
+				C996E549290B86D300E8B2F2 /* DailySongCollection.swift in Sources */,
 				C978D0BD290786CE0077CA6C /* TrackView.swift in Sources */,
 				C9888B0728FBB9F6002C17A7 /* User.swift in Sources */,
 				C978D0C3290786CE0077CA6C /* AlbumTrackCellView.swift in Sources */,

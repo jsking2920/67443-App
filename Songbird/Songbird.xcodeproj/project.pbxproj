@@ -35,9 +35,6 @@
 		C9888B0328FBAD42002C17A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */; };
 		C9888B0728FBB9F6002C17A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0628FBB9F6002C17A7 /* User.swift */; };
 		C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0928FBBAF5002C17A7 /* UserCollection.swift */; };
-		C9888B0E28FBBE86002C17A7 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0D28FBBE86002C17A7 /* UsersView.swift */; };
-		C9888B1028FBBF51002C17A7 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0F28FBBF51002C17A7 /* UserRowView.swift */; };
-		C9888B1328FBBFF9002C17A7 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B1228FBBFF9002C17A7 /* UserDetailsView.swift */; };
 		C996E547290B85BC00E8B2F2 /* DailySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = C996E546290B85BC00E8B2F2 /* DailySong.swift */; };
 		C996E549290B86D300E8B2F2 /* DailySongCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C996E548290B86D300E8B2F2 /* DailySongCollection.swift */; };
 /* End PBXBuildFile section */
@@ -69,9 +66,6 @@
 		C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9888B0628FBB9F6002C17A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C9888B0928FBBAF5002C17A7 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
-		C9888B0D28FBBE86002C17A7 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
-		C9888B0F28FBBF51002C17A7 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
-		C9888B1228FBBFF9002C17A7 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		C996E546290B85BC00E8B2F2 /* DailySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySong.swift; sourceTree = "<group>"; };
 		C996E548290B86D300E8B2F2 /* DailySongCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				C978D0A7290786380077CA6C /* Spotify */,
-				C9888B1128FBBFDD002C17A7 /* Users */,
 				C9888AEE28FB9619002C17A7 /* RootView.swift */,
 			);
 			path = Views;
@@ -228,16 +221,6 @@
 				C996E548290B86D300E8B2F2 /* DailySongCollection.swift */,
 			);
 			path = FirebaseCollections;
-			sourceTree = "<group>";
-		};
-		C9888B1128FBBFDD002C17A7 /* Users */ = {
-			isa = PBXGroup;
-			children = (
-				C9888B0D28FBBE86002C17A7 /* UsersView.swift */,
-				C9888B0F28FBBF51002C17A7 /* UserRowView.swift */,
-				C9888B1228FBBFF9002C17A7 /* UserDetailsView.swift */,
-			);
-			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,7 +305,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C978D0C6290786CE0077CA6C /* RecentlyPlayedView.swift in Sources */,
-				C9888B0E28FBBE86002C17A7 /* UsersView.swift in Sources */,
 				C9888AEF28FB9619002C17A7 /* RootView.swift in Sources */,
 				C978D0D1290787B50077CA6C /* AlertItem.swift in Sources */,
 				C978D0BF290786CE0077CA6C /* SearchForTracksView.swift in Sources */,
@@ -335,11 +317,9 @@
 				C978D0BB290786CE0077CA6C /* PlaylistCellView.swift in Sources */,
 				C978D0C1290786CE0077CA6C /* ExamplesListView.swift in Sources */,
 				C978D0C4290786CE0077CA6C /* AlbumGridItemView.swift in Sources */,
-				C9888B1328FBBFF9002C17A7 /* UserDetailsView.swift in Sources */,
 				C978D0BA290786CE0077CA6C /* PlaylistsListView.swift in Sources */,
 				C978D0CE290787B50077CA6C /* MiscellaneousUtilities.swift in Sources */,
 				C978D0C5290786CE0077CA6C /* AlbumTracksView.swift in Sources */,
-				C9888B1028FBBF51002C17A7 /* UserRowView.swift in Sources */,
 				C978D0C82907874E0077CA6C /* PlaylistDeduplicator.swift in Sources */,
 				C978D0CF290787B50077CA6C /* ImageNames.swift in Sources */,
 				C978D09D290743AE0077CA6C /* Spotify.swift in Sources */,
@@ -481,7 +461,7 @@
 				DEVELOPMENT_TEAM = J7782HF2UB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Songbird/Info.plist;
+				INFOPLIST_FILE = Songbird/Configs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -511,7 +491,7 @@
 				DEVELOPMENT_TEAM = J7782HF2UB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Songbird/Info.plist;
+				INFOPLIST_FILE = Songbird/Configs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

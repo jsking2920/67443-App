@@ -38,7 +38,7 @@ class DailySongCollection: ObservableObject {
 	func add(_ record: DailySong) {
 		do {
 			let newRecord = record
-			_ = try store.collection(path).addDocument(from: newUser)
+			_ = try store.collection(path).addDocument(from: newRecord)
 		} catch {
 			fatalError("Unable to add daily song: \(error.localizedDescription).")
 		}

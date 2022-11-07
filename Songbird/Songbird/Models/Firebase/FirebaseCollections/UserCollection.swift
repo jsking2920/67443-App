@@ -11,6 +11,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class UserCollection: ObservableObject {
+
 	private let path: String = "users"
 	private let store = Firestore.firestore()
 

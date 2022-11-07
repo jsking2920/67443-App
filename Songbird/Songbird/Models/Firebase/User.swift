@@ -13,7 +13,7 @@ struct User: Identifiable, Comparable, Codable {
 	// MARK: Fields
 	@DocumentID var id: String?
 	var email: String
-	var daily_songs: Dictionary<String, String>
+	var daily_songs: Dictionary<String, DailySong> // keys are dates in dd-mm-yyyy format
 	
 	// MARK: Codable
 	enum CodingKeys: String, CodingKey {
@@ -29,5 +29,30 @@ struct User: Identifiable, Comparable, Codable {
 	
 	static func <(lhs: User, rhs: User) -> Bool {
 		return lhs.email < rhs.email
+	}
+}
+
+struct DailySong: Codable, Comparable {
+	
+	// MARK: Fields
+	var spotify_id: String
+	var artist: String
+	var title: String
+	
+	// MARK: Codable
+	enum CodingKeys: String, CodingKey {
+		case spotify_id
+		case artist
+		case title
+	}
+	
+	// MARK: Comparable
+	static func ==(lhs: DailySong, rhs: DailySong) -> Bool {
+		return lhs.spotify_id == rhs.spotify_id
+	}
+	
+	static func <(lhs: DailySong, rhs: DailySong) -> Bool {
+		if (lhs.artist == rhs.artist) { return lhs.title < rhs.title }
+		return lhs.artist < rhs.artist
 	}
 }

@@ -13,12 +13,10 @@ struct RootTabView: View {
 					Label("Home", systemImage: "house")
 					Text("Home")
 				}
-				/*
 				CalendarView().tabItem {
 					Label("History", systemImage: "calendar")
 					Text("History")
 				}
-				 */
 				OptionsView().tabItem {
 					Label("Options", systemImage: "ellipsis")
 					Text("Options")

@@ -38,6 +38,7 @@
 		C9F0C5312919AB9700DB2CBB /* SongSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */; };
 		C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5322919ADBA00DB2CBB /* HomeView.swift */; };
 		C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5342919AF0600DB2CBB /* OptionsView.swift */; };
+		C9F0C5372919C08B00DB2CBB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5362919C08B00DB2CBB /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSearchView.swift; sourceTree = "<group>"; };
 		C9F0C5322919ADBA00DB2CBB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9F0C5342919AF0600DB2CBB /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		C9F0C5362919C08B00DB2CBB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 		C9F0C52E2919A99900DB2CBB /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				C9F0C5362919C08B00DB2CBB /* CalendarView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				C978D0BF290786CE0077CA6C /* SearchForTracksView.swift in Sources */,
 				C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */,
 				C978D0D0290787B50077CA6C /* SpotifyAPIExtensions.swift in Sources */,
+				C9F0C5372919C08B00DB2CBB /* CalendarView.swift in Sources */,
 				C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */,
 				C978D0BC290786CE0077CA6C /* DebugMenuView.swift in Sources */,
 				C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */,

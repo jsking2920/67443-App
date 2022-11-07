@@ -16,7 +16,7 @@
 		C978D0BD290786CE0077CA6C /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0AF290786CE0077CA6C /* TrackView.swift */; };
 		C978D0BE290786CE0077CA6C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B0290786CE0077CA6C /* LoginView.swift */; };
 		C978D0BF290786CE0077CA6C /* SearchForTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B1290786CE0077CA6C /* SearchForTracksView.swift */; };
-		C978D0C1290786CE0077CA6C /* ExamplesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B3290786CE0077CA6C /* ExamplesListView.swift */; };
+		C978D0C1290786CE0077CA6C /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B3290786CE0077CA6C /* RootTabView.swift */; };
 		C978D0C2290786CE0077CA6C /* SavedAlbumsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B5290786CE0077CA6C /* SavedAlbumsGridView.swift */; };
 		C978D0C3290786CE0077CA6C /* AlbumTrackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B6290786CE0077CA6C /* AlbumTrackCellView.swift */; };
 		C978D0C4290786CE0077CA6C /* AlbumGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B7290786CE0077CA6C /* AlbumGridItemView.swift */; };
@@ -35,6 +35,9 @@
 		C9888B0328FBAD42002C17A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */; };
 		C9888B0728FBB9F6002C17A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0628FBB9F6002C17A7 /* User.swift */; };
 		C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0928FBBAF5002C17A7 /* UserCollection.swift */; };
+		C9F0C5312919AB9700DB2CBB /* SongSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */; };
+		C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5322919ADBA00DB2CBB /* HomeView.swift */; };
+		C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5342919AF0600DB2CBB /* OptionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +49,7 @@
 		C978D0AF290786CE0077CA6C /* TrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		C978D0B0290786CE0077CA6C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C978D0B1290786CE0077CA6C /* SearchForTracksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchForTracksView.swift; sourceTree = "<group>"; };
-		C978D0B3290786CE0077CA6C /* ExamplesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesListView.swift; sourceTree = "<group>"; };
+		C978D0B3290786CE0077CA6C /* RootTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		C978D0B5290786CE0077CA6C /* SavedAlbumsGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedAlbumsGridView.swift; sourceTree = "<group>"; };
 		C978D0B6290786CE0077CA6C /* AlbumTrackCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTrackCellView.swift; sourceTree = "<group>"; };
 		C978D0B7290786CE0077CA6C /* AlbumGridItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumGridItemView.swift; sourceTree = "<group>"; };
@@ -64,6 +67,9 @@
 		C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9888B0628FBB9F6002C17A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C9888B0928FBBAF5002C17A7 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
+		C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSearchView.swift; sourceTree = "<group>"; };
+		C9F0C5322919ADBA00DB2CBB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C9F0C5342919AF0600DB2CBB /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +87,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C978D0A7290786380077CA6C /* Spotify */ = {
+		C978D0A7290786380077CA6C /* ExampleViews */ = {
 			isa = PBXGroup;
 			children = (
 				C978D0B4290786CE0077CA6C /* Album Views */,
@@ -89,11 +95,9 @@
 				C978D0AB290786CE0077CA6C /* Playlist Views */,
 				C978D0AE290786CE0077CA6C /* DebugMenuView.swift */,
 				C978D0AF290786CE0077CA6C /* TrackView.swift */,
-				C978D0B0290786CE0077CA6C /* LoginView.swift */,
 				C978D0B1290786CE0077CA6C /* SearchForTracksView.swift */,
-				C978D0B3290786CE0077CA6C /* ExamplesListView.swift */,
 			);
-			path = Spotify;
+			path = ExampleViews;
 			sourceTree = "<group>";
 		};
 		C978D0A8290786470077CA6C /* Firebase */ = {
@@ -203,8 +207,13 @@
 		C9888B0528FBB9CD002C17A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C978D0A7290786380077CA6C /* Spotify */,
+				C9F0C52F2919A9A300DB2CBB /* Options */,
+				C9F0C52E2919A99900DB2CBB /* Calendar */,
+				C9F0C52D2919A71100DB2CBB /* Home */,
+				C978D0A7290786380077CA6C /* ExampleViews */,
 				C9888AEE28FB9619002C17A7 /* RootView.swift */,
+				C978D0B3290786CE0077CA6C /* RootTabView.swift */,
+				C978D0B0290786CE0077CA6C /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +224,30 @@
 				C9888B0928FBBAF5002C17A7 /* UserCollection.swift */,
 			);
 			path = FirebaseCollections;
+			sourceTree = "<group>";
+		};
+		C9F0C52D2919A71100DB2CBB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */,
+				C9F0C5322919ADBA00DB2CBB /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C9F0C52E2919A99900DB2CBB /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		C9F0C52F2919A9A300DB2CBB /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0C5342919AF0600DB2CBB /* OptionsView.swift */,
+			);
+			path = Options;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,9 +339,10 @@
 				C978D0D0290787B50077CA6C /* SpotifyAPIExtensions.swift in Sources */,
 				C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */,
 				C978D0BC290786CE0077CA6C /* DebugMenuView.swift in Sources */,
+				C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */,
 				C978D0C2290786CE0077CA6C /* SavedAlbumsGridView.swift in Sources */,
 				C978D0BB290786CE0077CA6C /* PlaylistCellView.swift in Sources */,
-				C978D0C1290786CE0077CA6C /* ExamplesListView.swift in Sources */,
+				C978D0C1290786CE0077CA6C /* RootTabView.swift in Sources */,
 				C978D0C4290786CE0077CA6C /* AlbumGridItemView.swift in Sources */,
 				C978D0BA290786CE0077CA6C /* PlaylistsListView.swift in Sources */,
 				C978D0CE290787B50077CA6C /* MiscellaneousUtilities.swift in Sources */,
@@ -319,6 +353,8 @@
 				C978D0BE290786CE0077CA6C /* LoginView.swift in Sources */,
 				C978D0BD290786CE0077CA6C /* TrackView.swift in Sources */,
 				C9888B0728FBB9F6002C17A7 /* User.swift in Sources */,
+				C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */,
+				C9F0C5312919AB9700DB2CBB /* SongSearchView.swift in Sources */,
 				C978D0C3290786CE0077CA6C /* AlbumTrackCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,26 +20,21 @@ struct RootView: View {
 		@State private var cancellables: Set<AnyCancellable> = []
 		
 		var body: some View {
-				NavigationView {
-						ExamplesListView()
-								.navigationBarTitle("Spotify Example App")
-								.navigationBarItems(trailing: logoutButton)
-								.disabled(!spotify.isAuthorized)
-				}
-				// The login view is presented if `Spotify.isAuthorized` == `false. When
-				// the login button is tapped, `Spotify.authorize()` is called. After
-				// the login process successfully completes, `Spotify.isAuthorized` will
-				// be set to `true` and `LoginView` will be dismissed, allowing the user
-				// to interact with the rest of the app.
-				.modifier(LoginView())
-				// Presented if an error occurs during the process of authorizing with
-				// the user's Spotify account.
-				.alert(item: $alert) { alert in
+				RootTabView()
+					.disabled(!spotify.isAuthorized)
+					// The login view is presented if `Spotify.isAuthorized` == `false. When
+					// the login button is tapped, `Spotify.authorize()` is called. After
+					// the login process successfully completes, `Spotify.isAuthorized` will
+					// be set to `true` and `LoginView` will be dismissed, allowing the user
+					// to interact with the rest of the app.
+					.modifier(LoginView())
+					// Presented if an error occurs during the process of authorizing with
+					// the user's Spotify account.
+					.alert(item: $alert) { alert in
 						Alert(title: alert.title, message: alert.message)
-				}
-				// Called when a redirect is received from Spotify.
-				.onOpenURL(perform: handleURL(_:))
-				
+					}
+					// Called when a redirect is received from Spotify.
+					.onOpenURL(perform: handleURL(_:))
 		}
 		
 		/**
@@ -53,7 +48,7 @@ struct RootView: View {
 				// **Always** validate URLs; they offer a potential attack vector into
 				// your app.
 				guard url.scheme == self.spotify.loginCallbackURL.scheme else {
-						print("not handling URL: unexpected scheme: '\(url)'")
+						print("unexpected URL scheme: '\(url)'")
 						self.alert = AlertItem(
 								title: "Cannot Handle Redirect",
 								message: "Unexpected URL"
@@ -97,12 +92,12 @@ struct RootView: View {
 								let alertMessage: String
 								if let authError = error as? SpotifyAuthorizationError,
 									 authError.accessWasDenied {
-										alertTitle = "You Denied The Authorization Request :("
+										alertTitle = "Failed to authorize user"
 										alertMessage = ""
 								}
 								else {
 										alertTitle =
-												"Couldn't Authorization With Your Account"
+												"Couldn't Complete Authorization With Your Account"
 										alertMessage = error.localizedDescription
 								}
 								self.alert = AlertItem(
@@ -118,25 +113,6 @@ struct RootView: View {
 				// MARK: and not an attacker.
 				self.spotify.authorizationState = String.randomURLSafe(length: 128)
 				
-		}
-		
-		/// Removes the authorization information for the user.
-		var logoutButton: some View {
-				// Calling `spotify.api.authorizationManager.deauthorize` will cause
-				// `SpotifyAPI.authorizationManagerDidDeauthorize` to emit a signal,
-				// which will cause `Spotify.authorizationManagerDidDeauthorize()` to be
-				// called.
-				Button(action: spotify.api.authorizationManager.deauthorize, label: {
-						Text("Logout")
-								.foregroundColor(.white)
-								.padding(7)
-								.background(
-										Color(red: 0.392, green: 0.720, blue: 0.197)
-								)
-								.cornerRadius(10)
-								.shadow(radius: 3)
-						
-				})
 		}
 }
 

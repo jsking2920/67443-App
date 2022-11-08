@@ -22,7 +22,7 @@ struct HomeView: View {
 			SongSearchView()
 		}
 		else{
-			DailySongView(song: todaysSong!).environmentObject(spotify)
+			DailySongView(song: todaysSong!).environmentObject(spotify).environmentObject(userCollection)
 		}
 	}
 }

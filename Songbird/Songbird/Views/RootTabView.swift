@@ -16,10 +16,10 @@ struct RootTabView: View {
 					Label("Home", systemImage: "house")
 					Text("Home")
 				}.environmentObject(spotify).environmentObject(userCollection)
-				CalendarView(userCollection: userCollection).tabItem {
+				CalendarView().tabItem {
 					Label("History", systemImage: "calendar")
 					Text("History")
-				}.environmentObject(spotify)
+				}.environmentObject(spotify).environmentObject(userCollection)
 				OptionsView().tabItem {
 					Label("Options", systemImage: "ellipsis")
 					Text("Options")

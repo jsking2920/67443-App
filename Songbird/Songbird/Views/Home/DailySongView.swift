@@ -11,12 +11,12 @@ import SpotifyWebAPI
 
 struct DailySongView: View {
 	
+	@EnvironmentObject var userCollection: UserCollection
 	@EnvironmentObject var spotify: Spotify
 	var song: DailySong
 	
 	/// song's album art and Track object
 	@State private var track = Track.faces // gven example track used as a placeholder
-	@State private var didRequestTrack = false
 	@State private var image = Image(systemName: "doc")
 	@State private var didRequestImage = false
 	
@@ -36,6 +36,15 @@ struct DailySongView: View {
 				.padding()
 			Text(song.title).font(.headline)
 			Text(song.artist).font(.body)
+			
+			Button(action: deleteDailySong, label: {
+				Text("Choose Different Song")
+					.foregroundColor(.white)
+					.padding(10)
+					.background(.red)
+					.cornerRadius(10)
+					.shadow(radius: 3)
+			})
 		}
 		.onAppear(perform: loadTrack)
 		.alert(item: $alert) { alert in
@@ -44,14 +53,6 @@ struct DailySongView: View {
 	}
 	
 	func loadTrack() {
-		// Return early if the track has already been requested. We can't just
-		// check if `self.track == nil` because the track might have already
-		// been requested, but not loaded yet.
-		if self.didRequestTrack {
-				print("already requested track")
-				return
-		}
-		self.didRequestTrack = true
 		
 		self.getTrackCancellable = spotify.api.track("spotify:track:\(song.spotify_id)").sink(
 			receiveCompletion: { _ in},
@@ -95,9 +96,14 @@ struct DailySongView: View {
 			.sink(
 				receiveCompletion: { _ in },
 				receiveValue: { image in
-					print("received image")
+					//print("received image")
 					self.image = image
 				}
 			)
+	}
+	
+	func deleteDailySong(){
+		userCollection.users[0].daily_songs.removeValue(forKey: "\(Date().month)-\(Date().day)-\(Date().year)")
+		userCollection.update(userCollection.users.first!)
 	}
 }

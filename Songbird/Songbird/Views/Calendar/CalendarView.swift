@@ -14,7 +14,7 @@ import SwiftDate
 struct CalendarView: View {
 	
 	@EnvironmentObject var spotify: Spotify
-	var userCollection: UserCollection
+	@EnvironmentObject var userCollection: UserCollection
 
 	@ObservedObject var calendarManager =
 		ElegantCalendarManager(
@@ -24,15 +24,15 @@ struct CalendarView: View {
 			),
 			initialMonth: Date() // this month
 		)
-	
-	init(userCollection: UserCollection) {
-		self.userCollection = userCollection
-		calendarManager.datasource = self
-	}
-	
+
 	var body: some View {
 		ElegantCalendarView(calendarManager: calendarManager)
 			.theme(CalendarTheme(primary: Color(red: 0.392, green: 0.720, blue: 0.197), textColor: .white, todayTextColor: .white, todayBackgroundColor: .blue))
+			.onAppear(perform: {calendarManager.datasource = self})
+		// Doing all the operations to determine which days should be clickable, etc. on appear here
+		// makes this view very slow to load. Could set the datasource in init, but then the userCollection
+		// has to be passed in since environmentObjects aren't initialized until the body, which also means
+		// the calendar won't update since the userCollection is
 	}
 }
 	
@@ -66,6 +66,7 @@ extension CalendarView: ElegantCalendarDataSource {
 		let song: DailySong? = userCollection.users.first?.daily_songs["\(date.month)-\(date.day)-\(date.year)"]
 		
 		if (song == nil) {
+			if (date.isToday) { return CalendarBlankDayView(s: "You haven't picked a song yet!").erased }
 			return CalendarBlankDayView().erased
 		}
 		return CalendarSongView(song: song!).erased

@@ -8,7 +8,14 @@
 import SwiftUI
 
 struct CalendarBlankDayView: View {
+	
+	var message: String
+	
+	init(s: String = "You didn't pick song on this day!"){
+		message = s
+	}
+	
 	var body: some View {
-		Text("You didn't pick song on this day!")
+		Text(message)
 	}
 }

@@ -14,6 +14,7 @@ import SpotifyWebAPI
 struct RootView: View {
 		
 		@EnvironmentObject var spotify: Spotify
+		@EnvironmentObject var userCollection: UserCollection
 		
 		@State private var alert: AlertItem? = nil
 

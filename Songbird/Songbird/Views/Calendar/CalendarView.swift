@@ -18,7 +18,7 @@ struct CalendarView: View {
 	@ObservedObject var calendarManager =
 		ElegantCalendarManager(
 			configuration: CalendarConfiguration(
-				startDate: Date(year: 2021, month: 1, day: 2, hour: 0, minute: 0), // one day off for some reason (default region???)
+				startDate: Date(year: 2021, month: 1, day: 1, hour: 0, minute: 0),
 				endDate: Date() // Today
 			),
 			initialMonth: Date() // this month

@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseCore
 import Combine
 import SpotifyWebAPI
+import SwiftDate
 
 class AppDelegate: NSObject, UIApplicationDelegate {
 	func application(_ application: UIApplication,
@@ -21,18 +22,24 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct YourApp: App {
+
 	// register app delegate for Firebase setup
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
 	// Set up helper class for spotify authorization
 	@StateObject var spotify = Spotify()
 	
+	// Get current user
+	@StateObject var userCollection: UserCollection = UserCollection()
+	
 	init() {
 		SpotifyAPILogHandler.bootstrap()
+		SwiftDate.defaultRegion = Region(calendar: Calendars.gregorian, zone: Zones.americaNewYork)
 	}
 
 	var body: some Scene {
 		WindowGroup {
-			RootView().environmentObject(spotify)
+			RootView().environmentObject(spotify).environmentObject(userCollection)
 		}
 	}
 }

@@ -16,6 +16,7 @@ class UserCollection: ObservableObject {
 	private let store = Firestore.firestore()
 
 	@Published var users: [User] = []
+
 	private var cancellables: Set<AnyCancellable> = []
 
 	init() {

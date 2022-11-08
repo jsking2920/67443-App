@@ -111,7 +111,7 @@
 		C978D0A8290786470077CA6C /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				C9888B0828FBBAD8002C17A7 /* FirebaseCollections */,
+				C9888B0928FBBAF5002C17A7 /* UserCollection.swift */,
 				C9888B0628FBB9F6002C17A7 /* User.swift */,
 			);
 			path = Firebase;
@@ -225,14 +225,6 @@
 				C978D0B0290786CE0077CA6C /* LoginView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		C9888B0828FBBAD8002C17A7 /* FirebaseCollections */ = {
-			isa = PBXGroup;
-			children = (
-				C9888B0928FBBAF5002C17A7 /* UserCollection.swift */,
-			);
-			path = FirebaseCollections;
 			sourceTree = "<group>";
 		};
 		C9F0C52D2919A71100DB2CBB /* Home */ = {

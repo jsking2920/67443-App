@@ -9,7 +9,19 @@ import SwiftUI
 import Combine
 
 struct HomeView: View {
-    var body: some View {
-        SongSearchView()
-    }
+	
+	@EnvironmentObject var userCollection: UserCollection
+	
+	var body: some View {
+		
+		let todaysSong: DailySong? = userCollection.users.first?.daily_songs["\(Date().month)-\(Date().day)-\(Date().year)"]
+		
+		// User has not chosen a song for today
+		if (todaysSong == nil){
+			SongSearchView()
+		}
+		else{
+			Text(todaysSong!.title)
+		}
+	}
 }

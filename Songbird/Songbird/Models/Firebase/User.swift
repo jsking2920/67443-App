@@ -13,7 +13,7 @@ struct User: Identifiable, Comparable, Codable {
 	// MARK: Fields
 	@DocumentID var id: String?
 	var email: String
-	var daily_songs: Dictionary<String, DailySong> // keys are dates in dd-mm-yyyy format
+	var daily_songs: Dictionary<String, DailySong> // keys are dates in mm-dd-yyyy format
 	
 	// MARK: Codable
 	enum CodingKeys: String, CodingKey {

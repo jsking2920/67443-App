@@ -4,6 +4,9 @@
 import SwiftUI
 
 struct RootTabView: View {
+	
+		@EnvironmentObject var spotify: Spotify
+		@EnvironmentObject var userCollection: UserCollection
     
     var body: some View {
 			// This is the location where you can add views to the application.
@@ -12,15 +15,15 @@ struct RootTabView: View {
 				HomeView().tabItem {
 					Label("Home", systemImage: "house")
 					Text("Home")
-				}
-				CalendarView().tabItem {
+				}.environmentObject(spotify).environmentObject(userCollection)
+				CalendarView(userCollection: userCollection).tabItem {
 					Label("History", systemImage: "calendar")
 					Text("History")
-				}
+				}.environmentObject(spotify)
 				OptionsView().tabItem {
 					Label("Options", systemImage: "ellipsis")
 					Text("Options")
-				}
+				}.environmentObject(spotify).environmentObject(userCollection)
 				
 				/* Views from example app */
 				// PlaylistsListView().tabItem {Image(systemName: "house")}

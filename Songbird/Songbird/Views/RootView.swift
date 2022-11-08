@@ -36,6 +36,8 @@ struct RootView: View {
 					}
 					// Called when a redirect is received from Spotify.
 					.onOpenURL(perform: handleURL(_:))
+					.environmentObject(spotify)
+					.environmentObject(userCollection)
 		}
 		
 		/**

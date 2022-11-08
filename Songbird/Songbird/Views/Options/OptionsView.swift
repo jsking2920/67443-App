@@ -12,6 +12,7 @@ import SpotifyWebAPI
 struct OptionsView: View {
 	
 	@EnvironmentObject var spotify: Spotify
+	@EnvironmentObject var userCollection: UserCollection
 	
 	/// User's profile image
 	@State private var image = Image(systemName: "person.circle")

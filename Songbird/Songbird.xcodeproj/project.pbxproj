@@ -44,6 +44,7 @@
 		C9F0C5442919EFC200DB2CBB /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = C9F0C5432919EFC200DB2CBB /* SwiftDate */; };
 		C9F0C546291A108C00DB2CBB /* DailySongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C545291A108C00DB2CBB /* DailySongView.swift */; };
 		C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */; };
+		C9F0C54A291A3F1100DB2CBB /* CalendarBlankDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../../../Library/Developer/Xcode/DerivedData/Songbird-btykodcoleugwmekbrskuxyrjfjw/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
 		C9F0C545291A108C00DB2CBB /* DailySongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongView.swift; sourceTree = "<group>"; };
 		C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSongView.swift; sourceTree = "<group>"; };
+		C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBlankDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			children = (
 				C9F0C5362919C08B00DB2CBB /* CalendarView.swift */,
 				C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */,
+				C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				C978D0C1290786CE0077CA6C /* RootTabView.swift in Sources */,
 				C978D0C4290786CE0077CA6C /* AlbumGridItemView.swift in Sources */,
 				C978D0BA290786CE0077CA6C /* PlaylistsListView.swift in Sources */,
+				C9F0C54A291A3F1100DB2CBB /* CalendarBlankDayView.swift in Sources */,
 				C978D0CE290787B50077CA6C /* MiscellaneousUtilities.swift in Sources */,
 				C978D0C5290786CE0077CA6C /* AlbumTracksView.swift in Sources */,
 				C978D0C82907874E0077CA6C /* PlaylistDeduplicator.swift in Sources */,

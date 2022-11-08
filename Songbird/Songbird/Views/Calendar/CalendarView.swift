@@ -8,22 +8,19 @@
 import SwiftUI
 import Combine
 import SpotifyWebAPI
+import ElegantCalendar
 
 struct CalendarView: View {
 	
 	@EnvironmentObject var spotify: Spotify
-	
-	@State private var selected_date = Date()
+
+	@ObservedObject var calendarManager = ElegantCalendarManager(
+		configuration: CalendarConfiguration(startDate: Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * (-30 * 36))),
+																				 endDate: Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * (30 * 36))))
+	)
 	
 	var body: some View {
-		/*
-		DatePicker(
-			"????",
-			selection: $selected_date,
-			displayedComponents: [.date]
-		)
-		.datePickerStyle(.graphical)
-		 */
-		Text("placeholder")
+
+		ElegantCalendarView(calendarManager: calendarManager)
 	}
 }

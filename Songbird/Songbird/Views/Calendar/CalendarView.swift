@@ -23,10 +23,27 @@ struct CalendarView: View {
 			),
 			initialMonth: Date() // this month
 		)
-
-
+	
+	init() {
+		calendarManager.datasource = self
+	}
+	
 	var body: some View {
 		ElegantCalendarView(calendarManager: calendarManager)
 			.theme(CalendarTheme(primary: Color(red: 0.392, green: 0.720, blue: 0.197), textColor: .white, todayTextColor: .white, todayBackgroundColor: Color(red: 0.392, green: 0.720, blue: 0.197)))
+	}
+}
+	
+extension CalendarView: ElegantCalendarDataSource {
+	func calendar(canSelectDate date: Date) -> Bool {
+		return true
+	}
+	
+	func calendar(backgroundColorOpacityForDate date: Date) -> Double {
+		return 1.0
+	}
+	
+	func calendar(viewForSelectedDate date: Date, dimensions size: CGSize) -> AnyView {
+		CalendarSongView().erased
 	}
 }

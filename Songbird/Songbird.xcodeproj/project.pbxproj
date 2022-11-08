@@ -43,6 +43,7 @@
 		C9F0C5412919DB2E00DB2CBB /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */; };
 		C9F0C5442919EFC200DB2CBB /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = C9F0C5432919EFC200DB2CBB /* SwiftDate */; };
 		C9F0C546291A108C00DB2CBB /* DailySongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C545291A108C00DB2CBB /* DailySongView.swift */; };
+		C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		C9F0C5362919C08B00DB2CBB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../../../Library/Developer/Xcode/DerivedData/Songbird-btykodcoleugwmekbrskuxyrjfjw/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
 		C9F0C545291A108C00DB2CBB /* DailySongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongView.swift; sourceTree = "<group>"; };
+		C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSongView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F0C5362919C08B00DB2CBB /* CalendarView.swift */,
+				C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				C978D0BD290786CE0077CA6C /* TrackView.swift in Sources */,
 				C9888B0728FBB9F6002C17A7 /* User.swift in Sources */,
 				C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */,
+				C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */,
 				C9F0C5312919AB9700DB2CBB /* SongSearchView.swift in Sources */,
 				C978D0C3290786CE0077CA6C /* AlbumTrackCellView.swift in Sources */,
 			);

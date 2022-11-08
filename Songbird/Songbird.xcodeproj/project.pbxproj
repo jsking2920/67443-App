@@ -45,6 +45,8 @@
 		C9F0C546291A108C00DB2CBB /* DailySongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C545291A108C00DB2CBB /* DailySongView.swift */; };
 		C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */; };
 		C9F0C54A291A3F1100DB2CBB /* CalendarBlankDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */; };
+		C9F0C54C291A48F000DB2CBB /* SearchResultTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C54B291A48F000DB2CBB /* SearchResultTrackView.swift */; };
+		C9F0C54E291A4B4D00DB2CBB /* DailySongConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C54D291A4B4D00DB2CBB /* DailySongConfirmationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		C9F0C545291A108C00DB2CBB /* DailySongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongView.swift; sourceTree = "<group>"; };
 		C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSongView.swift; sourceTree = "<group>"; };
 		C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBlankDayView.swift; sourceTree = "<group>"; };
+		C9F0C54B291A48F000DB2CBB /* SearchResultTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTrackView.swift; sourceTree = "<group>"; };
+		C9F0C54D291A4B4D00DB2CBB /* DailySongConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongConfirmationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,8 @@
 				C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */,
 				C9F0C5322919ADBA00DB2CBB /* HomeView.swift */,
 				C9F0C545291A108C00DB2CBB /* DailySongView.swift */,
+				C9F0C54B291A48F000DB2CBB /* SearchResultTrackView.swift */,
+				C9F0C54D291A4B4D00DB2CBB /* DailySongConfirmationView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				C9888AEF28FB9619002C17A7 /* RootView.swift in Sources */,
 				C978D0D1290787B50077CA6C /* AlertItem.swift in Sources */,
 				C978D0BF290786CE0077CA6C /* SearchForTracksView.swift in Sources */,
+				C9F0C54E291A4B4D00DB2CBB /* DailySongConfirmationView.swift in Sources */,
 				C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */,
 				C978D0D0290787B50077CA6C /* SpotifyAPIExtensions.swift in Sources */,
 				C9F0C5372919C08B00DB2CBB /* CalendarView.swift in Sources */,
@@ -372,6 +379,7 @@
 				C978D0BE290786CE0077CA6C /* LoginView.swift in Sources */,
 				C978D0BD290786CE0077CA6C /* TrackView.swift in Sources */,
 				C9888B0728FBB9F6002C17A7 /* User.swift in Sources */,
+				C9F0C54C291A48F000DB2CBB /* SearchResultTrackView.swift in Sources */,
 				C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */,
 				C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */,
 				C9F0C5312919AB9700DB2CBB /* SongSearchView.swift in Sources */,

@@ -9,18 +9,24 @@ import SwiftUI
 import Combine
 import SpotifyWebAPI
 import ElegantCalendar
+import SwiftDate
 
 struct CalendarView: View {
 	
 	@EnvironmentObject var spotify: Spotify
 
-	@ObservedObject var calendarManager = ElegantCalendarManager(
-		configuration: CalendarConfiguration(startDate: Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * (-30 * 36))),
-																				 endDate: Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * (30 * 36))))
-	)
-	
-	var body: some View {
+	@ObservedObject var calendarManager =
+		ElegantCalendarManager(
+			configuration: CalendarConfiguration(
+				startDate: Date(year: 2021, month: 1, day: 2, hour: 0, minute: 0), // one day off for some reason (default region???)
+				endDate: Date() // Today
+			),
+			initialMonth: Date() // this month
+		)
 
+
+	var body: some View {
 		ElegantCalendarView(calendarManager: calendarManager)
+			.theme(CalendarTheme(primary: Color(red: 0.392, green: 0.720, blue: 0.197), textColor: .white, todayTextColor: .white, todayBackgroundColor: Color(red: 0.392, green: 0.720, blue: 0.197)))
 	}
 }

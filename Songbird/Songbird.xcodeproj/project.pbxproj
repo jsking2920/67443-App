@@ -41,6 +41,7 @@
 		C9F0C5372919C08B00DB2CBB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5362919C08B00DB2CBB /* CalendarView.swift */; };
 		C9F0C53A2919C61100DB2CBB /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C9F0C5392919C61100DB2CBB /* ElegantCalendar */; };
 		C9F0C5412919DB2E00DB2CBB /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */; };
+		C9F0C5442919EFC200DB2CBB /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = C9F0C5432919EFC200DB2CBB /* SwiftDate */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 			files = (
 				C9888AFC28FBA054002C17A7 /* FirebaseFirestore in Frameworks */,
 				C978D09B29073D190077CA6C /* SpotifyAPI in Frameworks */,
+				C9F0C5442919EFC200DB2CBB /* SwiftDate in Frameworks */,
 				C9888AFE28FBA054002C17A7 /* FirebaseFirestoreSwift in Frameworks */,
 				C9F0C53A2919C61100DB2CBB /* ElegantCalendar in Frameworks */,
 				C978D0A02907456B0077CA6C /* KeychainAccess in Frameworks */,
@@ -280,6 +282,7 @@
 				C978D09A29073D190077CA6C /* SpotifyAPI */,
 				C978D09F2907456B0077CA6C /* KeychainAccess */,
 				C9F0C5392919C61100DB2CBB /* ElegantCalendar */,
+				C9F0C5432919EFC200DB2CBB /* SwiftDate */,
 			);
 			productName = Songbird;
 			productReference = C9888AE928FB9619002C17A7 /* Songbird.app */;
@@ -314,6 +317,7 @@
 				C978D09929073D190077CA6C /* XCRemoteSwiftPackageReference "SpotifyAPI" */,
 				C978D09E2907456B0077CA6C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				C9F0C5382919C61100DB2CBB /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
+				C9F0C5422919EFC100DB2CBB /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = C9888AEA28FB9619002C17A7 /* Products */;
 			projectDirPath = "";
@@ -606,6 +610,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		C9F0C5422919EFC100DB2CBB /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -633,6 +645,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9F0C5382919C61100DB2CBB /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
 			productName = ElegantCalendar;
+		};
+		C9F0C5432919EFC200DB2CBB /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9F0C5422919EFC100DB2CBB /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

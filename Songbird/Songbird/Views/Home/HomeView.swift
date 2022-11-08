@@ -10,6 +10,7 @@ import Combine
 
 struct HomeView: View {
 	
+	@EnvironmentObject var spotify: Spotify
 	@EnvironmentObject var userCollection: UserCollection
 	
 	var body: some View {
@@ -21,7 +22,7 @@ struct HomeView: View {
 			SongSearchView()
 		}
 		else{
-			Text(todaysSong!.title)
+			DailySongView(song: todaysSong!).environmentObject(spotify)
 		}
 	}
 }

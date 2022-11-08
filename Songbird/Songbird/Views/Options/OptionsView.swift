@@ -76,7 +76,7 @@ struct OptionsView: View {
 			self.didRequestImage = true
 			
 		guard let spotifyImage = spotify.currentUser!.images?.largest else {
-					// print("no image found for '\(playlist.name)'")
+					// print("no image found")
 					return
 			}
 

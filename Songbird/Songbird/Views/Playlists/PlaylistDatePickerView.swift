@@ -31,7 +31,6 @@ struct PlaylistDatePickerView: View {
 
     var body: some View {
         VStack{
-            HStack{
                 DatePicker("Start Date", selection: $startDate,
                            displayedComponents: [.date])
                 DatePicker("End Date",
@@ -45,8 +44,7 @@ struct PlaylistDatePickerView: View {
                     .background(Color(red: 0.392, green: 0.720, blue: 0.197))
                     .cornerRadius(10)
                     .shadow(radius: 3)
-            })            
-        }
+            })
     }
     func playlistCreator() {
         var dateFormatter = DateFormatter()
@@ -61,7 +59,10 @@ struct PlaylistDatePickerView: View {
         }
         var newPlaylist = spotify.api.createPlaylist(for: (spotify.currentUser?.uri)!, PlaylistDetails(name:"New Playlist from SongBird", description: "Generated on \(Date.now) via the SongBird App! Contains songs picked from \(startDate) to \(endDate)"))
         var result = spotify.api.addToPlaylist(newPlaylist.description.uri, uris: songs)
-        print(result.description.uri)
+        var url = "www.spotify.com/playlist/\(result.description.uri.components(separatedBy: ":")[2])"
+        if let url = URL(string: url) {
+            UIApplication.shared.open(url)
+        }
     }
 }
  

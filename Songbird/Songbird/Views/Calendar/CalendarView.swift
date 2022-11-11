@@ -25,9 +25,9 @@ struct CalendarView: View {
 		)
 
 	var body: some View {
-		ElegantCalendarView(calendarManager: calendarManager)
-			.theme(CalendarTheme(primary: Color(red: 0.392, green: 0.720, blue: 0.197), textColor: .white, todayTextColor: .white, todayBackgroundColor: .blue))
-			.onAppear(perform: {calendarManager.datasource = self})
+            ElegantCalendarView(calendarManager: calendarManager)
+                .theme(CalendarTheme(primary: Color(red: 0.392, green: 0.720, blue: 0.197), textColor: .white, todayTextColor: .white, todayBackgroundColor: .blue))
+                .onAppear(perform: {calendarManager.datasource = self})
 		// Doing all the operations to determine which days should be clickable, etc. on appear here
 		// makes this view very slow to load. Could set the datasource in init, but then the userCollection
 		// has to be passed in since environmentObjects aren't initialized until the body, which also means

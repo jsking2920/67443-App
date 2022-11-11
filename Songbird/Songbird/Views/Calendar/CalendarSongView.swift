@@ -31,13 +31,15 @@ struct CalendarSongView: View {
 			image
 				.resizable()
 				.scaledToFit()
-				.frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.width * 0.5)
+				.frame(width: UIScreen.main.bounds.width * 0.2, height: UIScreen.main.bounds.width * 0.2)
 				.padding()
 			VStack{
 				Text(song.title).font(.headline)
 				Text(song.artist).font(.body)
 			}
+            .padding()
 		}
+        .padding(.bottom, 50)
 		.onAppear(perform: loadTrack)
 		.alert(item: $alert) { alert in
 				Alert(title: alert.title, message: alert.message)

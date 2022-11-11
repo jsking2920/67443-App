@@ -41,13 +41,15 @@
 		C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5342919AF0600DB2CBB /* OptionsView.swift */; };
 		C9F0C5372919C08B00DB2CBB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5362919C08B00DB2CBB /* CalendarView.swift */; };
 		C9F0C53A2919C61100DB2CBB /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C9F0C5392919C61100DB2CBB /* ElegantCalendar */; };
-		C9F0C5412919DB2E00DB2CBB /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */; };
 		C9F0C5442919EFC200DB2CBB /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = C9F0C5432919EFC200DB2CBB /* SwiftDate */; };
 		C9F0C546291A108C00DB2CBB /* DailySongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C545291A108C00DB2CBB /* DailySongView.swift */; };
 		C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */; };
 		C9F0C54A291A3F1100DB2CBB /* CalendarBlankDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */; };
 		C9F0C54C291A48F000DB2CBB /* SearchResultTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C54B291A48F000DB2CBB /* SearchResultTrackView.swift */; };
 		C9F0C54E291A4B4D00DB2CBB /* DailySongConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C54D291A4B4D00DB2CBB /* DailySongConfirmationView.swift */; };
+		EB2CCFFD291AE78000BA139B /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB2CCFFC291AE77F00BA139B /* ElegantCalendar.xcassets */; };
+		EBB641FD291DD53E00F07BEF /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB641FC291DD53E00F07BEF /* PlaylistView.swift */; };
+		EBB64200291DD62F00F07BEF /* PlaylistDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB641FF291DD62F00F07BEF /* PlaylistDatePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,12 +84,14 @@
 		C9F0C5322919ADBA00DB2CBB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9F0C5342919AF0600DB2CBB /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		C9F0C5362919C08B00DB2CBB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../../../Library/Developer/Xcode/DerivedData/Songbird-btykodcoleugwmekbrskuxyrjfjw/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
 		C9F0C545291A108C00DB2CBB /* DailySongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongView.swift; sourceTree = "<group>"; };
 		C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSongView.swift; sourceTree = "<group>"; };
 		C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBlankDayView.swift; sourceTree = "<group>"; };
 		C9F0C54B291A48F000DB2CBB /* SearchResultTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTrackView.swift; sourceTree = "<group>"; };
 		C9F0C54D291A4B4D00DB2CBB /* DailySongConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongConfirmationView.swift; sourceTree = "<group>"; };
+		EB2CCFFC291AE77F00BA139B /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../Library/Developer/Xcode/DerivedData/Songbird-eljopsjqqejqmzamhhqznblbqwmi/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
+		EBB641FC291DD53E00F07BEF /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
+		EBB641FF291DD62F00F07BEF /* PlaylistDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDatePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +192,7 @@
 		C9888AE028FB9619002C17A7 = {
 			isa = PBXGroup;
 			children = (
-				C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */,
+				EB2CCFFC291AE77F00BA139B /* ElegantCalendar.xcassets */,
 				C9888AEB28FB9619002C17A7 /* Songbird */,
 				C9888AEA28FB9619002C17A7 /* Products */,
 			);
@@ -229,6 +233,7 @@
 		C9888B0528FBB9CD002C17A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EBB641FE291DD57A00F07BEF /* Playlists */,
 				C9F0C52F2919A9A300DB2CBB /* Options */,
 				C9F0C52E2919A99900DB2CBB /* Calendar */,
 				C9F0C52D2919A71100DB2CBB /* Home */,
@@ -268,6 +273,15 @@
 				C9F0C5342919AF0600DB2CBB /* OptionsView.swift */,
 			);
 			path = Options;
+			sourceTree = "<group>";
+		};
+		EBB641FE291DD57A00F07BEF /* Playlists */ = {
+			isa = PBXGroup;
+			children = (
+				EBB641FC291DD53E00F07BEF /* PlaylistView.swift */,
+				EBB641FF291DD62F00F07BEF /* PlaylistDatePickerView.swift */,
+			);
+			path = Playlists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,7 +359,7 @@
 			files = (
 				C9888AF128FB9620002C17A7 /* Assets.xcassets in Resources */,
 				C9888B0328FBAD42002C17A7 /* GoogleService-Info.plist in Resources */,
-				C9F0C5412919DB2E00DB2CBB /* ElegantCalendar.xcassets in Resources */,
+				EB2CCFFD291AE78000BA139B /* ElegantCalendar.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +374,7 @@
 				C9888AEF28FB9619002C17A7 /* RootView.swift in Sources */,
 				C978D0D1290787B50077CA6C /* AlertItem.swift in Sources */,
 				C978D0BF290786CE0077CA6C /* SearchForTracksView.swift in Sources */,
+				EBB64200291DD62F00F07BEF /* PlaylistDatePickerView.swift in Sources */,
 				C9F0C54E291A4B4D00DB2CBB /* DailySongConfirmationView.swift in Sources */,
 				C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */,
 				C978D0D0290787B50077CA6C /* SpotifyAPIExtensions.swift in Sources */,
@@ -383,6 +398,7 @@
 				C978D0BE290786CE0077CA6C /* LoginView.swift in Sources */,
 				C978D0BD290786CE0077CA6C /* TrackView.swift in Sources */,
 				C9888B0728FBB9F6002C17A7 /* User.swift in Sources */,
+				EBB641FD291DD53E00F07BEF /* PlaylistView.swift in Sources */,
 				C9F0C54C291A48F000DB2CBB /* SearchResultTrackView.swift in Sources */,
 				C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */,
 				C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */,
@@ -517,8 +533,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Songbird/Preview Content\"";
-				DEVELOPMENT_TEAM = J7782HF2UB;
+				DEVELOPMENT_TEAM = TWA59TNGQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Songbird/Configs/Info.plist;
@@ -532,7 +547,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-43-f22-team20.Songbird";
+				PRODUCT_BUNDLE_IDENTIFIER = "-7-443-f22-team20.Songbird";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -547,8 +562,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Songbird/Preview Content\"";
-				DEVELOPMENT_TEAM = J7782HF2UB;
+				DEVELOPMENT_TEAM = TWA59TNGQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Songbird/Configs/Info.plist;
@@ -562,7 +576,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-43-f22-team20.Songbird";
+				PRODUCT_BUNDLE_IDENTIFIER = "-7-443-f22-team20.Songbird";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

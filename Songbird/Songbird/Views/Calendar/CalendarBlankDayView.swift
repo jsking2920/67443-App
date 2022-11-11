@@ -17,14 +17,17 @@ struct CalendarBlankDayView: View {
 	}
 	
 	var body: some View {
-		Text(message)
-		Button(action: { appState.selectedTab = 0 }, label: {
-			Text("Choose Today's Song")
-				.foregroundColor(.white)
-				.padding(10)
-				.background(Color(red: 0.392, green: 0.720, blue: 0.197))
-				.cornerRadius(10)
-				.shadow(radius: 3)
-		})
+		VStack {
+			Text(message).padding()
+			Button(action: { appState.selectedTab = 0 }, label: {
+				Text("Choose Today's Song")
+					.foregroundColor(.white)
+					.padding(10)
+					.background(Color(red: 0.392, green: 0.720, blue: 0.197))
+					.cornerRadius(10)
+					.shadow(radius: 3)
+			})
+			Spacer()
+		}
 	}
 }

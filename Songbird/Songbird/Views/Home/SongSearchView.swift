@@ -77,6 +77,7 @@ struct SongSearchView: View {
 		// `onCommit` is called when the user presses the return key.
 		TextField("Search", text: $searchText, onCommit: search)
 			.padding(.leading, 22)
+            .submitLabel(.search)
 			.overlay(
 				HStack {
 					Image(systemName: "magnifyingglass")

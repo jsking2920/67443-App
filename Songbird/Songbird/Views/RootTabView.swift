@@ -20,11 +20,14 @@ struct RootTabView: View {
 					Label("History", systemImage: "calendar")
 					Text("History")
 				}.environmentObject(spotify).environmentObject(userCollection)
-				OptionsView().tabItem {
+                PlaylistView().tabItem {
+                    Label("Playlists", systemImage: "ellipsis")
+                    Text("Playlist")
+                }.environmentObject(spotify).environmentObject(userCollection)
+                OptionsView().tabItem {
 					Label("Options", systemImage: "ellipsis")
 					Text("Options")
 				}.environmentObject(spotify).environmentObject(userCollection)
-				
 				/* Views from example app */
 				// PlaylistsListView().tabItem {Image(systemName: "house")}
 				// SavedAlbumsGridView().tabItem {Image(systemName: "house")}

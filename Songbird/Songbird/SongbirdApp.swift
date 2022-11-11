@@ -26,11 +26,7 @@ struct YourApp: App {
 	// register app delegate for Firebase setup
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
-	// Set up helper class for spotify authorization
-	@StateObject var spotify = Spotify()
-	
-	// Get current user
-	@StateObject var userCollection: UserCollection = UserCollection()
+	@StateObject var appState = AppState()
 	
 	init() {
 		SpotifyAPILogHandler.bootstrap()
@@ -39,7 +35,7 @@ struct YourApp: App {
 
 	var body: some Scene {
 		WindowGroup {
-			RootView().environmentObject(spotify).environmentObject(userCollection)
+			RootView().environmentObject(appState)
 		}
 	}
 }

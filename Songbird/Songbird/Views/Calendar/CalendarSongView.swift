@@ -11,7 +11,7 @@ import SpotifyWebAPI
 
 struct CalendarSongView: View {
 	
-	@EnvironmentObject var spotify: Spotify
+	@EnvironmentObject var appState: AppState
 	var song: DailySong
 	
 	/// song's album art and Track object
@@ -54,7 +54,7 @@ struct CalendarSongView: View {
 		}
 		self.didRequestTrack = true
 		
-		self.getTrackCancellable = spotify.api.track("spotify:track:\(song.spotify_id)").sink(
+		self.getTrackCancellable = appState.spotify.api.track("spotify:track:\(song.spotify_id)").sink(
 			receiveCompletion: { _ in},
 			receiveValue: { track in
 				// print("received track")

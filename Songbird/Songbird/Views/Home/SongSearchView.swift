@@ -12,7 +12,7 @@ import Combine
 
 struct SongSearchView: View {
 
-	@EnvironmentObject var spotify: Spotify
+	@EnvironmentObject var appState: AppState
 	
 	@State private var isSearching = false
 	
@@ -111,7 +111,7 @@ struct SongSearchView: View {
 		print("searching with query '\(self.searchText)'")
 		self.isSearching = true
 		
-		self.searchCancellable = spotify.api.search(
+		self.searchCancellable = appState.spotify.api.search(
 			query: self.searchText, categories: [.track]
 		)
 		.receive(on: RunLoop.main)
@@ -130,23 +130,5 @@ struct SongSearchView: View {
 				print("received \(self.tracks.count) tracks")
 			}
 		)
-	}
-}
-
-struct SongSearchView_Previews: PreviewProvider {
-	
-	static let spotify = Spotify()
-	
-	static let tracks: [Track] = [
-		.because, .comeTogether, .odeToViceroy, .illWind,
-		.faces, .theEnd, .time, .theEnd, .reckoner
-	]
-	
-	static var previews: some View {
-		NavigationView {
-			SongSearchView(sampleTracks: tracks)
-				.listStyle(PlainListStyle())
-				.environmentObject(spotify)
-		}
 	}
 }

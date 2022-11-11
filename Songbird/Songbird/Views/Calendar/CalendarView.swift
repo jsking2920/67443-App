@@ -13,8 +13,7 @@ import SwiftDate
 
 struct CalendarView: View {
 	
-	@EnvironmentObject var spotify: Spotify
-	@EnvironmentObject var userCollection: UserCollection
+	@EnvironmentObject var appState: AppState
 
 	@ObservedObject var calendarManager =
 		ElegantCalendarManager(
@@ -52,7 +51,7 @@ extension CalendarView: ElegantCalendarDataSource {
 	}
 	
 	func calendar(backgroundColorOpacityForDate date: Date) -> Double {
-		let song: DailySong? = userCollection.users.first?.daily_songs["\(date.month)-\(date.day)-\(date.year)"]
+		let song: DailySong? = appState.userCollection.users.first?.daily_songs["\(date.month)-\(date.day)-\(date.year)"]
 		
 		if (song == nil) {
 			return 0.4
@@ -63,11 +62,11 @@ extension CalendarView: ElegantCalendarDataSource {
 	}
 	
 	func calendar(viewForSelectedDate date: Date, dimensions size: CGSize) -> AnyView {
-		let song: DailySong? = userCollection.users.first?.daily_songs["\(date.month)-\(date.day)-\(date.year)"]
+		let song: DailySong? = appState.userCollection.users.first?.daily_songs["\(date.month)-\(date.day)-\(date.year)"]
 		
 		if (song == nil) {
 			if (date.isToday) { return CalendarBlankDayView(s: "You haven't picked a song yet!").erased }
-			return CalendarBlankDayView().erased
+			return CalendarBlankDayView().environmentObject(appState).erased
 		}
 		return CalendarSongView(song: song!).erased
 	}

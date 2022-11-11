@@ -28,7 +28,7 @@ struct LoginView: ViewModifier {
     
     @Environment(\.colorScheme) var colorScheme
 
-    @EnvironmentObject var spotify: Spotify
+		var spotify: Spotify
 
     /// After the app first launches, add a short delay before showing this view
     /// so that the animation can be seen.

@@ -11,8 +11,7 @@ import SpotifyWebAPI
 
 struct DailySongView: View {
 	
-	@EnvironmentObject var userCollection: UserCollection
-	@EnvironmentObject var spotify: Spotify
+	@EnvironmentObject var appState: AppState
 	var song: DailySong
 	
 	/// song's album art and Track object
@@ -37,13 +36,17 @@ struct DailySongView: View {
 			Text(song.title).font(.headline)
 			Text(song.artist).font(.body)
 			
-			Button(action: deleteDailySong, label: {
-				Text("Choose Different Song")
-					.foregroundColor(.white)
-					.padding(10)
-					.background(.red)
-					.cornerRadius(10)
-					.shadow(radius: 3)
+			NavigationLink( destination: SongSearchView().environmentObject(appState),
+											label: {
+												Text("Choose Different Song")
+													.foregroundColor(.white)
+													.padding(10)
+													.background(.red)
+													.cornerRadius(10)
+													.shadow(radius: 3)
+			})
+			.simultaneousGesture(TapGesture().onEnded{
+					deleteDailySong()
 			})
 		}
 		.onAppear(perform: loadTrack)
@@ -54,7 +57,7 @@ struct DailySongView: View {
 	
 	func loadTrack() {
 		
-		self.getTrackCancellable = spotify.api.track("spotify:track:\(song.spotify_id)").sink(
+		self.getTrackCancellable = appState.spotify.api.track("spotify:track:\(song.spotify_id)").sink(
 			receiveCompletion: { _ in},
 			receiveValue: { track in
 				// print("received track")
@@ -103,7 +106,7 @@ struct DailySongView: View {
 	}
 	
 	func deleteDailySong(){
-		userCollection.users[0].daily_songs.removeValue(forKey: "\(Date().month)-\(Date().day)-\(Date().year)")
-		userCollection.update(userCollection.users.first!)
+		appState.userCollection.users[0].daily_songs.removeValue(forKey: "\(Date().month)-\(Date().day)-\(Date().year)")
+		appState.userCollection.update(appState.userCollection.users.first!)
 	}
 }

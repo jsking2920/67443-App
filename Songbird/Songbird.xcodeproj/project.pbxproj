@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C905DA80291EBF090014E2E2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C905DA7F291EBF090014E2E2 /* AppState.swift */; };
 		C978D09B29073D190077CA6C /* SpotifyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = C978D09A29073D190077CA6C /* SpotifyAPI */; };
 		C978D09D290743AE0077CA6C /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D09C290743AE0077CA6C /* Spotify.swift */; };
 		C978D0A02907456B0077CA6C /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C978D09F2907456B0077CA6C /* KeychainAccess */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C905DA7F291EBF090014E2E2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		C978D098290734B20077CA6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C978D09C290743AE0077CA6C /* Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
 		C978D0AC290786CE0077CA6C /* PlaylistsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsListView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				C978D0A92907866C0077CA6C /* Spotify */,
 				C978D0A8290786470077CA6C /* Firebase */,
+				C905DA7F291EBF090014E2E2 /* AppState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */,
 				C978D0BC290786CE0077CA6C /* DebugMenuView.swift in Sources */,
 				C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */,
+				C905DA80291EBF090014E2E2 /* AppState.swift in Sources */,
 				C978D0C2290786CE0077CA6C /* SavedAlbumsGridView.swift in Sources */,
 				C978D0BB290786CE0077CA6C /* PlaylistCellView.swift in Sources */,
 				C978D0C1290786CE0077CA6C /* RootTabView.swift in Sources */,

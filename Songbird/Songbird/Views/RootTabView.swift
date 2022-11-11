@@ -5,50 +5,25 @@ import SwiftUI
 
 struct RootTabView: View {
 	
-		@EnvironmentObject var spotify: Spotify
-		@EnvironmentObject var userCollection: UserCollection
-    
-    var body: some View {
-			// This is the location where you can add views to the application.
-			// Each view receives an instance of `Spotify` from the environment.
-			TabView {
-				HomeView().tabItem {
-					Label("Home", systemImage: "house")
-					Text("Home")
-				}.environmentObject(spotify).environmentObject(userCollection)
-				CalendarView().tabItem {
-					Label("History", systemImage: "calendar")
-					Text("History")
-				}.environmentObject(spotify).environmentObject(userCollection)
-				OptionsView().tabItem {
-					Label("Options", systemImage: "ellipsis")
-					Text("Options")
-				}.environmentObject(spotify).environmentObject(userCollection)
-				
-				/* Views from example app */
-				// PlaylistsListView().tabItem {Image(systemName: "house")}
-				// SavedAlbumsGridView().tabItem {Image(systemName: "house")}
-				// SearchForTracksView().tabItem {Image(systemName: "house")}
-				// RecentlyPlayedView().tabItem {Image(systemName: "house")}
-				// DebugMenuView().tabItem {Image(systemName: "house")}
-        }
-			.tabViewStyle(DefaultTabViewStyle())// PageTabViewStyle(indexDisplayMode: .always)  could be cool
-			.tint(.green) // todo: standardize this to spotify colors
-    }
-}
+	@EnvironmentObject var appState: AppState
 
-struct ExamplesListView_Previews: PreviewProvider {
-    
-    static let spotify: Spotify = {
-        let spotify = Spotify()
-        spotify.isAuthorized = true
-        return spotify
-    }()
-    
-    static var previews: some View {
-        NavigationView {
-            RootTabView()
-                .environmentObject(spotify)
-        }
-    }
+	var body: some View {
+
+		TabView(selection: $appState.selectedTab) {
+			HomeView().tabItem {
+				Label("Home", systemImage: "house")
+				Text("Home")
+			}.environmentObject(appState).tag(0)
+			CalendarView().tabItem {
+				Label("History", systemImage: "calendar")
+				Text("History")
+			}.environmentObject(appState).tag(1)
+			OptionsView().tabItem {
+				Label("Options", systemImage: "ellipsis")
+				Text("Options")
+			}.environmentObject(appState).tag(2)
+		}
+		.tabViewStyle(DefaultTabViewStyle())// PageTabViewStyle(indexDisplayMode: .always)  could be cool
+		.tint(.green) // todo: standardize this to spotify colors
+	}
 }

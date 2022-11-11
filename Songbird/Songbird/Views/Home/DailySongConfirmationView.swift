@@ -12,8 +12,7 @@ import SpotifyWebAPI
 
 struct DailySongConfirmationView: View {
 	
-	@EnvironmentObject var userCollection: UserCollection
-	@EnvironmentObject var spotify: Spotify
+	@EnvironmentObject var appState: AppState
 	var track: Track
 	
 	/// song's album art
@@ -36,14 +35,15 @@ struct DailySongConfirmationView: View {
 			Text(track.name).font(.headline)
 			Text(track.artists?.first?.name ?? "").font(.body)
 			
-			Button(action: confirmDailySong, label: {
-				Text("Confirm")
-					.foregroundColor(.white)
-					.padding(10)
-					.background(Color(red: 0.392, green: 0.720, blue: 0.197))
-					.cornerRadius(10)
-					.shadow(radius: 3)
-			})
+			NavigationLink(destination: DailySongView(song: confirmDailySong()).environmentObject(appState),
+										 label: {
+											Text("Confirm")
+													 .foregroundColor(.white)
+													 .padding(10)
+													 .background(Color(red: 0.392, green: 0.720, blue: 0.197))
+													 .cornerRadius(10)
+													 .shadow(radius: 3)
+											})
 		}
 		.onAppear(perform: loadImage)
 		.alert(item: $alert) { alert in
@@ -84,9 +84,10 @@ struct DailySongConfirmationView: View {
 			)
 	}
 	
-	func confirmDailySong(){
-		userCollection.users[0].daily_songs["\(Date().month)-\(Date().day)-\(Date().year)"] =
-			DailySong(spotify_id: track.id!, artist: track.artists?.first?.name ?? "N/A", title: track.name)
-		userCollection.update(userCollection.users.first!)
+	func confirmDailySong( )-> DailySong {
+		var song = DailySong(spotify_id: track.id!, artist: track.artists?.first?.name ?? "N/A", title: track.name)
+		appState.userCollection.users[0].daily_songs["\(Date().month)-\(Date().day)-\(Date().year)"] = song
+		appState.userCollection.update(appState.userCollection.users.first!)
+		return song
 	}
 }

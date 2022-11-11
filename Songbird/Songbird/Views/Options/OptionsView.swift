@@ -11,8 +11,7 @@ import SpotifyWebAPI
 
 struct OptionsView: View {
 	
-	@EnvironmentObject var spotify: Spotify
-	@EnvironmentObject var userCollection: UserCollection
+	@EnvironmentObject var appState: AppState
 	
 	/// User's profile image
 	@State private var image = Image(systemName: "person.circle")
@@ -36,7 +35,7 @@ struct OptionsView: View {
 					.shadow(radius: 10)
 					.overlay(Circle().stroke(Color(red: 0.392, green: 0.720, blue: 0.197), lineWidth: 3))
 
-				Text(spotify.currentUser?.displayName ?? "user")
+				Text(appState.spotify.currentUser?.displayName ?? "user")
 					.font(.subheadline)
 					.padding()
 
@@ -45,7 +44,7 @@ struct OptionsView: View {
 				/// `SpotifyAPI.authorizationManagerDidDeauthorize` to emit a signal,
 				/// which will cause `Spotify.authorizationManagerDidDeauthorize()` to be
 				/// called.
-				Button(action: spotify.api.authorizationManager.deauthorize, label: {
+				Button(action: appState.spotify.api.authorizationManager.deauthorize, label: {
 					Text("Logout")
 						.foregroundColor(.white)
 						.padding(10)
@@ -76,7 +75,7 @@ struct OptionsView: View {
 			}
 			self.didRequestImage = true
 			
-		guard let spotifyImage = spotify.currentUser!.images?.largest else {
+		guard let spotifyImage = appState.spotify.currentUser!.images?.largest else {
 					// print("no image found")
 					return
 			}

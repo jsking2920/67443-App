@@ -11,7 +11,7 @@ import SpotifyWebAPI
 
 struct SearchResultTrackView: View {
 		
-		@EnvironmentObject var spotify: Spotify
+	@EnvironmentObject var appState: AppState
 		let track: Track
 		
 		var body: some View {

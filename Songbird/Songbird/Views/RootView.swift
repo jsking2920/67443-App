@@ -13,8 +13,9 @@ import SpotifyWebAPI
 
 struct RootView: View {
 		
-		@EnvironmentObject var spotify: Spotify
-		@EnvironmentObject var userCollection: UserCollection
+		@EnvironmentObject var appState: AppState
+		//@EnvironmentObject var spotify: Spotify
+		//@EnvironmentObject var userCollection: UserCollection
 		
 		@State private var alert: AlertItem? = nil
 
@@ -22,13 +23,13 @@ struct RootView: View {
 		
 		var body: some View {
 				RootTabView()
-					.disabled(!spotify.isAuthorized)
+					.disabled(!appState.spotify.isAuthorized)
 					// The login view is presented if `Spotify.isAuthorized` == `false. When
 					// the login button is tapped, `Spotify.authorize()` is called. After
 					// the login process successfully completes, `Spotify.isAuthorized` will
 					// be set to `true` and `LoginView` will be dismissed, allowing the user
 					// to interact with the rest of the app.
-					.modifier(LoginView())
+					.modifier(LoginView(spotify: appState.spotify))
 					// Presented if an error occurs during the process of authorizing with
 					// the user's Spotify account.
 					.alert(item: $alert) { alert in
@@ -36,8 +37,7 @@ struct RootView: View {
 					}
 					// Called when a redirect is received from Spotify.
 					.onOpenURL(perform: handleURL(_:))
-					.environmentObject(spotify)
-					.environmentObject(userCollection)
+					.environmentObject(appState)
 		}
 		
 		/**
@@ -50,7 +50,7 @@ struct RootView: View {
 				
 				// **Always** validate URLs; they offer a potential attack vector into
 				// your app.
-				guard url.scheme == self.spotify.loginCallbackURL.scheme else {
+				guard url.scheme == self.appState.spotify.loginCallbackURL.scheme else {
 						print("unexpected URL scheme: '\(url)'")
 						self.alert = AlertItem(
 								title: "Cannot Handle Redirect",
@@ -63,21 +63,21 @@ struct RootView: View {
 				
 				// This property is used to display an activity indicator in `LoginView`
 				// indicating that the access and refresh tokens are being retrieved.
-				spotify.isRetrievingTokens = true
+				appState.spotify.isRetrievingTokens = true
 				
 				// Complete the authorization process by requesting the access and
 				// refresh tokens.
-				spotify.api.authorizationManager.requestAccessAndRefreshTokens(
+				appState.spotify.api.authorizationManager.requestAccessAndRefreshTokens(
 						redirectURIWithQuery: url,
 						// This value must be the same as the one used to create the
 						// authorization URL. Otherwise, an error will be thrown.
-						state: spotify.authorizationState
+						state: appState.spotify.authorizationState
 				)
 				.receive(on: RunLoop.main)
 				.sink(receiveCompletion: { completion in
 						// Whether the request succeeded or not, we need to remove the
 						// activity indicator.
-						self.spotify.isRetrievingTokens = false
+						self.appState.spotify.isRetrievingTokens = false
 						
 						/*
 						 After the access and refresh tokens are retrieved,
@@ -114,21 +114,7 @@ struct RootView: View {
 				// MARK: each authorization request. This ensures an incoming redirect
 				// MARK: from Spotify was the result of a request made by this app, and
 				// MARK: and not an attacker.
-				self.spotify.authorizationState = String.randomURLSafe(length: 128)
+				self.appState.spotify.authorizationState = String.randomURLSafe(length: 128)
 				
-		}
-}
-
-struct RootView_Previews: PreviewProvider {
-		
-		static let spotify: Spotify = {
-				let spotify = Spotify()
-				spotify.isAuthorized = true
-				return spotify
-		}()
-		
-		static var previews: some View {
-				RootView()
-						.environmentObject(spotify)
 		}
 }

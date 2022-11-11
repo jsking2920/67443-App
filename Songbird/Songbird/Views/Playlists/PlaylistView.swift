@@ -15,6 +15,6 @@ struct PlaylistView: View {
     
     var body: some View {
         // View is just two date pickers and the list of songs in between those dates, and an export button leading to Spotify the App.
-        PlaylistDatePickerView()
+        PlaylistDatePickerView(playlist: nil)
     }
 }

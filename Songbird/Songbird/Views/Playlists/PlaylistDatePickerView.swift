@@ -14,16 +14,17 @@ struct PlaylistDatePickerView: View {
 
     @EnvironmentObject var spotify: Spotify
     @EnvironmentObject var userCollection: UserCollection
-
+    
     @State var startDate = Date()
     @State var endDate = Date()
     
+    @State var playlist: Playlist<PlaylistItems>? = nil
     
     func sorterForDates(this:String, that:String) -> Bool {
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-DD-YYYY"
-        var d1 = dateFormatter.date(from: this)
-        var d2 = dateFormatter.date(from: that)
+        let d1 = dateFormatter.date(from: this)
+        let d2 = dateFormatter.date(from: that)
         return d1! > d2!
     }
     // solution we figured out : on button press iterate over daily songs and add each to array to display + send off to playlist!!!@!
@@ -31,12 +32,13 @@ struct PlaylistDatePickerView: View {
 
     var body: some View {
         VStack{
-                DatePicker("Start Date", selection: $startDate,
-                           displayedComponents: [.date])
-                DatePicker("End Date",
-                           selection: $endDate,
-                           displayedComponents: [.date])
-                }
+            Spacer()
+            DatePicker("Start Date", selection: $startDate,
+                       displayedComponents: [.date])
+            DatePicker("End Date",
+                       selection: $endDate,
+                       displayedComponents: [.date])
+            Spacer()
             Button(action: playlistCreator, label: {
                 Text("Create Playlist")
                     .foregroundColor(.white)
@@ -45,11 +47,13 @@ struct PlaylistDatePickerView: View {
                     .cornerRadius(10)
                     .shadow(radius: 3)
             })
+            .padding()
+        }
     }
     func playlistCreator() {
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-DD-YYYY"
-        var daily_songs = userCollection.users.first?.daily_songs
+        let daily_songs = userCollection.users.first?.daily_songs
         var songs: [SpotifyURIConvertible] = []
         daily_songs?.forEach{ date, song in
             let d = dateFormatter.date(from: date)
@@ -57,9 +61,11 @@ struct PlaylistDatePickerView: View {
                 songs.append("spotify:track:\(song.spotify_id)")
             }
         }
-        var newPlaylist = spotify.api.createPlaylist(for: (spotify.currentUser?.uri)!, PlaylistDetails(name:"New Playlist from SongBird", description: "Generated on \(Date.now) via the SongBird App! Contains songs picked from \(startDate) to \(endDate)"))
-        var result = spotify.api.addToPlaylist(newPlaylist.description.uri, uris: songs)
-        var url = "www.spotify.com/playlist/\(result.description.uri.components(separatedBy: ":")[2])"
+        var getPlaylist = spotify.api.createPlaylist(for: (spotify.currentUser?.uri)!, PlaylistDetails(name:"New Playlist from SongBird", description: "Generated on \(Date.now) via the SongBird App! Contains songs picked from \(startDate) to \(endDate)")).sink(receiveCompletion: {_ in}, receiveValue: {playlist in self.playlist = playlist})
+        while (playlist)
+        var result = spotify.api.addToPlaylist(playlist!.uri, uris: songs)
+        print("Done!")
+        let url = "www.open.spotify.com/playlist/\(playlist!.uri)"
         if let url = URL(string: url) {
             UIApplication.shared.open(url)
         }

@@ -21,7 +21,7 @@ struct RootTabView: View {
 					Text("History")
 				}.environmentObject(spotify).environmentObject(userCollection)
                 PlaylistView().tabItem {
-                    Label("Playlists", systemImage: "music")
+                    Label("Playlists", systemImage: "music.note.list")
                     Text("Playlist")
                 }.environmentObject(spotify).environmentObject(userCollection)
                 OptionsView().tabItem {

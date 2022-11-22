@@ -14,14 +14,14 @@ struct HomeView: View {
 	
 	var body: some View {
 		
-		let todaysSong: DailySong? = appState.userCollection.users.first?.daily_songs["\(Date().month)-\(Date().day)-\(Date().year)"]
+		let todaysSong: DailySong? = appState.currentUser?.user.daily_songs["\(Date().month)-\(Date().day)-\(Date().year)"]
 		
 		// User has not chosen a song for today
 		if (todaysSong == nil){
 			SongSearchView()
 		}
 		else{
-			DailySongView(song: todaysSong!).environmentObject(appState)
+			DailySongView(song: todaysSong!)
 		}
 	}
 }

@@ -286,7 +286,28 @@ final class Spotify: ObservableObject {
 								}
 						)
 						.store(in: &cancellables)
-				
+		}
+		
+	func retrieveCurrentUserID(completion: @escaping ((String?) -> Void)) {
+			
+		guard self.isAuthorized else { completion(nil); return }
+			
+		if self.currentUser != nil {
+			completion(self.currentUser?.id)
 		}
 
+		self.api.currentUserProfile()
+				.receive(on: RunLoop.main)
+				.sink(
+						receiveCompletion: { completion in
+								if case .failure(let error) = completion {
+										print("couldn't retrieve current user: \(error)")
+								}
+						},
+						receiveValue: { user in
+							completion(user.id)
+						}
+				)
+				.store(in: &cancellables)
+	}
 }

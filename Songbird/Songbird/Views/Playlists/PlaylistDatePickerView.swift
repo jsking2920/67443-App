@@ -52,7 +52,7 @@ struct PlaylistDatePickerView: View {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "MM-DD-YYYY"
 
-		let daily_songs = appState.userCollection.users.first?.daily_songs
+		let daily_songs = appState.currentUser?.user.daily_songs
 		var songs: [SpotifyURIConvertible] = []
 
 		daily_songs?.forEach{ date, song in

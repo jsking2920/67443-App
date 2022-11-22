@@ -105,8 +105,8 @@ struct DailySongView: View {
 			)
 	}
 	
-	func deleteDailySong(){
-		appState.userCollection.users[0].daily_songs.removeValue(forKey: "\(Date().month)-\(Date().day)-\(Date().year)")
-		appState.userCollection.update(appState.userCollection.users.first!)
+	func deleteDailySong() {
+		appState.currentUser?.user.daily_songs.removeValue(forKey: "\(Date().month)-\(Date().day)-\(Date().year)")
+		appState.currentUser?.updateCurrentUserInFirestore()
 	}
 }

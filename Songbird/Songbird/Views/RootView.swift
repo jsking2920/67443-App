@@ -14,30 +14,29 @@ import SpotifyWebAPI
 struct RootView: View {
 		
 		@EnvironmentObject var appState: AppState
-		//@EnvironmentObject var spotify: Spotify
-		//@EnvironmentObject var userCollection: UserCollection
 		
 		@State private var alert: AlertItem? = nil
-
 		@State private var cancellables: Set<AnyCancellable> = []
 		
 		var body: some View {
+			NavigationView {
 				RootTabView()
 					.disabled(!appState.spotify.isAuthorized)
-					// The login view is presented if `Spotify.isAuthorized` == `false. When
-					// the login button is tapped, `Spotify.authorize()` is called. After
-					// the login process successfully completes, `Spotify.isAuthorized` will
-					// be set to `true` and `LoginView` will be dismissed, allowing the user
-					// to interact with the rest of the app.
-					.modifier(LoginView(spotify: appState.spotify))
-					// Presented if an error occurs during the process of authorizing with
-					// the user's Spotify account.
-					.alert(item: $alert) { alert in
-						Alert(title: alert.title, message: alert.message)
-					}
-					// Called when a redirect is received from Spotify.
-					.onOpenURL(perform: handleURL(_:))
-					.environmentObject(appState)
+			}
+			// The login view is presented if `Spotify.isAuthorized` == `false. When
+			// the login button is tapped, `Spotify.authorize()` is called. After
+			// the login process successfully completes, `Spotify.isAuthorized` will
+			// be set to `true` and `LoginView` will be dismissed, allowing the user
+			// to interact with the rest of the app.
+			.modifier(LoginView(shouldShow: $appState.spotify.isAuthorized))
+			// Presented if an error occurs during the process of authorizing with
+			// the user's Spotify account.
+			.alert(item: $alert) { alert in
+				Alert(title: alert.title, message: alert.message)
+			}
+			// Called when a redirect is received from Spotify.
+			.onOpenURL(perform: handleURL(_:)) // Calls appState.setCurrentUser to get firebase user
+			.onAppear(perform: { () in if (appState.currentUser == nil) {appState.setCurrentUser()} }) // Sets firebase user in case user opens app and doesn't have to go through spotify authorization
 		}
 		
 		/**
@@ -63,15 +62,15 @@ struct RootView: View {
 				
 				// This property is used to display an activity indicator in `LoginView`
 				// indicating that the access and refresh tokens are being retrieved.
-				appState.spotify.isRetrievingTokens = true
+				self.appState.spotify.isRetrievingTokens = true
 				
 				// Complete the authorization process by requesting the access and
 				// refresh tokens.
-				appState.spotify.api.authorizationManager.requestAccessAndRefreshTokens(
+				self.appState.spotify.api.authorizationManager.requestAccessAndRefreshTokens(
 						redirectURIWithQuery: url,
 						// This value must be the same as the one used to create the
 						// authorization URL. Otherwise, an error will be thrown.
-						state: appState.spotify.authorizationState
+						state: self.appState.spotify.authorizationState
 				)
 				.receive(on: RunLoop.main)
 				.sink(receiveCompletion: { completion in
@@ -106,6 +105,9 @@ struct RootView: View {
 								self.alert = AlertItem(
 										title: alertTitle, message: alertMessage
 								)
+						}
+						else { // Get current user in firebase after authorization complete
+							appState.setCurrentUser()
 						}
 				})
 				.store(in: &cancellables)

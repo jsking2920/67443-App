@@ -3,8 +3,10 @@
 
 import SwiftUI
 
+// Users will only see this view, and the rest of the app, after going through authorization with Spotify
 struct RootTabView: View {
 	
+	// Initialized with setCurrentUser in RootView after authorization
 	@EnvironmentObject var appState: AppState
 
 	var body: some View {
@@ -13,19 +15,19 @@ struct RootTabView: View {
 			HomeView().tabItem {
 				Label("Home", systemImage: "house")
 				Text("Home")
-			}.environmentObject(appState).tag(0)
+			}.tag(0)
 			CalendarView().tabItem {
 				Label("History", systemImage: "calendar")
 				Text("History")
-			}.environmentObject(appState).tag(1)
+			}.tag(1)
 			PlaylistView().tabItem{
 				Label("Playlists", systemImage: "music.note.list")
 				Text("Playlists")
-			}.environmentObject(appState).tag(2)
+			}.tag(2)
 			OptionsView().tabItem {
 				Label("Options", systemImage: "ellipsis")
 				Text("Options")
-			}.environmentObject(appState).tag(3)
+			}.tag(3)
 			
 		}
 		.tabViewStyle(DefaultTabViewStyle())// PageTabViewStyle(indexDisplayMode: .always)  could be cool

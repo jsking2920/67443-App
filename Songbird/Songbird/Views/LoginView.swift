@@ -28,7 +28,9 @@ struct LoginView: ViewModifier {
     
     @Environment(\.colorScheme) var colorScheme
 
-		var spotify: Spotify
+		@EnvironmentObject var appState: AppState
+		@Binding var shouldShow: Bool // should be appState.spotify.isAuthorized
+		                              // Don't know why but using a binding is more reliable than referencing the env object
 
     /// After the app first launches, add a short delay before showing this view
     /// so that the animation can be seen.
@@ -52,11 +54,11 @@ struct LoginView: ViewModifier {
     func body(content: Content) -> some View {
         content
             .blur(
-                radius: spotify.isAuthorized && !Self.debugAlwaysShowing ? 0 : 3
+								radius: shouldShow && !Self.debugAlwaysShowing ? 0 : 3
             )
             .overlay(
                 ZStack {
-                    if !spotify.isAuthorized || Self.debugAlwaysShowing {
+										if !shouldShow || Self.debugAlwaysShowing {
                         Color.black.opacity(0.25)
                             .edgesIgnoringSafeArea(.all)
                         if self.finishedViewLoadDelay || Self.debugAlwaysShowing {
@@ -92,7 +94,7 @@ struct LoginView: ViewModifier {
     
     var spotifyButton: some View {
 
-        Button(action: spotify.authorize) {
+				Button(action: appState.spotify.authorize) {
             HStack {
                 Image(spotifyLogo)
                     .interpolation(.high)
@@ -112,7 +114,7 @@ struct LoginView: ViewModifier {
         // Prevent the user from trying to login again
         // if a request to retrieve the access and refresh
         // tokens is currently in progress.
-        .allowsHitTesting(!spotify.isRetrievingTokens)
+				.allowsHitTesting(!appState.spotify.isRetrievingTokens)
         .padding(.bottom, 5)
         
     }
@@ -120,7 +122,7 @@ struct LoginView: ViewModifier {
     var retrievingTokensView: some View {
         VStack {
             Spacer()
-            if spotify.isRetrievingTokens {
+						if appState.spotify.isRetrievingTokens {
                 HStack {
                     ProgressView()
                         .padding()
@@ -133,6 +135,7 @@ struct LoginView: ViewModifier {
     
 }
 
+// Unused?
 struct LoginView2: ViewModifier {
 
     /// Always show this view for debugging purposes. Most importantly, this is
@@ -248,22 +251,4 @@ struct LoginView2: ViewModifier {
         }
     }
     
-}
-
-struct LoginView_Previews: PreviewProvider {
-    
-    static let spotify = Spotify()
-    
-    static var previews: some View {
-        RootView()
-            .environmentObject(spotify)
-            .onAppear(perform: onAppear)
-    }
-    
-    static func onAppear() {
-        spotify.isAuthorized = false
-        spotify.isRetrievingTokens = true
-        LoginView.debugAlwaysShowing = true
-    }
-
 }

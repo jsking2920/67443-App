@@ -25,9 +25,7 @@ struct OptionsView: View {
 	var body: some View {
 		
 		NavigationView {
-			
 			VStack {
-	
 				image
 					.frame(width: 150, height: 150)
 					.padding()

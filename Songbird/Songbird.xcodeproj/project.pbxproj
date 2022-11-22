@@ -36,7 +36,7 @@
 		C9888AFE28FBA054002C17A7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9888AFD28FBA054002C17A7 /* FirebaseFirestoreSwift */; };
 		C9888B0328FBAD42002C17A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */; };
 		C9888B0728FBB9F6002C17A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0628FBB9F6002C17A7 /* User.swift */; };
-		C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0928FBBAF5002C17A7 /* UserCollection.swift */; };
+		C9888B0A28FBBAF5002C17A7 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0928FBBAF5002C17A7 /* CurrentUser.swift */; };
 		C9F0C5312919AB9700DB2CBB /* SongSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */; };
 		C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5322919ADBA00DB2CBB /* HomeView.swift */; };
 		C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5342919AF0600DB2CBB /* OptionsView.swift */; };
@@ -80,7 +80,7 @@
 		C9888AF028FB9620002C17A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9888B0628FBB9F6002C17A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C9888B0928FBBAF5002C17A7 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
+		C9888B0928FBBAF5002C17A7 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSearchView.swift; sourceTree = "<group>"; };
 		C9F0C5322919ADBA00DB2CBB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9F0C5342919AF0600DB2CBB /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		C978D0A8290786470077CA6C /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				C9888B0928FBBAF5002C17A7 /* UserCollection.swift */,
+				C9888B0928FBBAF5002C17A7 /* CurrentUser.swift */,
 				C9888B0628FBB9F6002C17A7 /* User.swift */,
 			);
 			path = Firebase;
@@ -214,6 +214,7 @@
 				C978D0C9290787B50077CA6C /* Project Utilities */,
 				C9888B0528FBB9CD002C17A7 /* Views */,
 				C9888B0428FBB9C7002C17A7 /* Models */,
+				C905DA7F291EBF090014E2E2 /* AppState.swift */,
 				C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */,
 				C9888AF028FB9620002C17A7 /* Assets.xcassets */,
 			);
@@ -225,7 +226,6 @@
 			children = (
 				C978D0A92907866C0077CA6C /* Spotify */,
 				C978D0A8290786470077CA6C /* Firebase */,
-				C905DA7F291EBF090014E2E2 /* AppState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 				C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */,
 				C978D0D0290787B50077CA6C /* SpotifyAPIExtensions.swift in Sources */,
 				C9F0C5372919C08B00DB2CBB /* CalendarView.swift in Sources */,
-				C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */,
+				C9888B0A28FBBAF5002C17A7 /* CurrentUser.swift in Sources */,
 				C978D0BC290786CE0077CA6C /* DebugMenuView.swift in Sources */,
 				C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */,
 				C905DA80291EBF090014E2E2 /* AppState.swift in Sources */,

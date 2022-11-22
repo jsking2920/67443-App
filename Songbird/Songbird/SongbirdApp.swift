@@ -26,7 +26,7 @@ struct YourApp: App {
 	// register app delegate for Firebase setup
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
-	@StateObject var appState = AppState()
+	@StateObject var appState: AppState = AppState()
 	
 	init() {
 		SpotifyAPILogHandler.bootstrap()

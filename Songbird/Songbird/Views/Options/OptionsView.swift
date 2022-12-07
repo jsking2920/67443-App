@@ -33,7 +33,7 @@ struct OptionsView: View {
 					.padding()
 					.clipShape(Circle())
 					.shadow(radius: 10)
-					.overlay(Circle().stroke(Color(red: 0.392, green: 0.720, blue: 0.197), lineWidth: 3))
+					.overlay(Circle().stroke(Color(red: 0x1D/256, green: 0xB9/256, blue: 0x54/256), lineWidth: 3))
 
 				Text(appState.spotify.currentUser?.displayName ?? "user")
 					.font(.subheadline)
@@ -49,7 +49,7 @@ struct OptionsView: View {
 						.foregroundColor(.white)
 						.padding(10)
 						.background(
-								Color(red: 0.392, green: 0.720, blue: 0.197)
+                            Color(red: 0x1D/256, green: 0xB9/256, blue: 0x54/256)
 						)
 						.cornerRadius(10)
 						.shadow(radius: 3)
@@ -59,7 +59,7 @@ struct OptionsView: View {
 					Alert(title: alert.title, message: alert.message)
 			}
 			.onAppear(perform: loadImage)
-			.navigationBarTitle("Options")
+			.navigationBarTitle("Profile")
 		}
 	}
 	

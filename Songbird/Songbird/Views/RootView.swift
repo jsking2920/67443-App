@@ -12,7 +12,7 @@ import Combine
 import SpotifyWebAPI
 
 struct RootView: View {
-		
+    
 		@EnvironmentObject var appState: AppState
 		//@EnvironmentObject var spotify: Spotify
 		//@EnvironmentObject var userCollection: UserCollection

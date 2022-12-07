@@ -86,7 +86,8 @@ struct DailySongConfirmationView: View {
 	
 	func confirmDailySong( )-> DailySong {
 		var song = DailySong(spotify_id: track.id!, artist: track.artists?.first?.name ?? "N/A", title: track.name)
-		appState.userCollection.users[0].daily_songs["\(Date().month)-\(Date().day)-\(Date().year)"] = song
+        print(appState.userCollection.users)
+        appState.userCollection.users[0].daily_songs        ["\(Date().month)-\(Date().day)-\(Date().year)"] = song
 		appState.userCollection.update(appState.userCollection.users.first!)
 		return song
 	}

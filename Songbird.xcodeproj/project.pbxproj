@@ -1,0 +1,893 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		789B95342942434400E5E4AD /* SongbirdUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789B95332942434400E5E4AD /* SongbirdUnitTest.swift */; };
+		C978D09B29073D190077CA6C /* SpotifyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = C978D09A29073D190077CA6C /* SpotifyAPI */; };
+		C978D09D290743AE0077CA6C /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D09C290743AE0077CA6C /* Spotify.swift */; };
+		C978D0A02907456B0077CA6C /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C978D09F2907456B0077CA6C /* KeychainAccess */; };
+		C978D0BA290786CE0077CA6C /* PlaylistsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0AC290786CE0077CA6C /* PlaylistsListView.swift */; };
+		C978D0BB290786CE0077CA6C /* PlaylistCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0AD290786CE0077CA6C /* PlaylistCellView.swift */; };
+		C978D0BC290786CE0077CA6C /* DebugMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0AE290786CE0077CA6C /* DebugMenuView.swift */; };
+		C978D0BD290786CE0077CA6C /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0AF290786CE0077CA6C /* TrackView.swift */; };
+		C978D0BE290786CE0077CA6C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B0290786CE0077CA6C /* LoginView.swift */; };
+		C978D0BF290786CE0077CA6C /* SearchForTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B1290786CE0077CA6C /* SearchForTracksView.swift */; };
+		C978D0C1290786CE0077CA6C /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B3290786CE0077CA6C /* RootTabView.swift */; };
+		C978D0C2290786CE0077CA6C /* SavedAlbumsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B5290786CE0077CA6C /* SavedAlbumsGridView.swift */; };
+		C978D0C3290786CE0077CA6C /* AlbumTrackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B6290786CE0077CA6C /* AlbumTrackCellView.swift */; };
+		C978D0C4290786CE0077CA6C /* AlbumGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B7290786CE0077CA6C /* AlbumGridItemView.swift */; };
+		C978D0C5290786CE0077CA6C /* AlbumTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B8290786CE0077CA6C /* AlbumTracksView.swift */; };
+		C978D0C6290786CE0077CA6C /* RecentlyPlayedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0B9290786CE0077CA6C /* RecentlyPlayedView.swift */; };
+		C978D0C82907874E0077CA6C /* PlaylistDeduplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0C72907874E0077CA6C /* PlaylistDeduplicator.swift */; };
+		C978D0CE290787B50077CA6C /* MiscellaneousUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0CA290787B50077CA6C /* MiscellaneousUtilities.swift */; };
+		C978D0CF290787B50077CA6C /* ImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0CB290787B50077CA6C /* ImageNames.swift */; };
+		C978D0D0290787B50077CA6C /* SpotifyAPIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0CC290787B50077CA6C /* SpotifyAPIExtensions.swift */; };
+		C978D0D1290787B50077CA6C /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0CD290787B50077CA6C /* AlertItem.swift */; };
+		C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */; };
+		C9888AEF28FB9619002C17A7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEE28FB9619002C17A7 /* RootView.swift */; };
+		C9888AF128FB9620002C17A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9888AF028FB9620002C17A7 /* Assets.xcassets */; };
+		C9888AFC28FBA054002C17A7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C9888AFB28FBA054002C17A7 /* FirebaseFirestore */; };
+		C9888AFE28FBA054002C17A7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9888AFD28FBA054002C17A7 /* FirebaseFirestoreSwift */; };
+		C9888B0328FBAD42002C17A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */; };
+		C9888B0728FBB9F6002C17A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0628FBB9F6002C17A7 /* User.swift */; };
+		C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888B0928FBBAF5002C17A7 /* UserCollection.swift */; };
+		C9F0C5312919AB9700DB2CBB /* SongSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */; };
+		C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5322919ADBA00DB2CBB /* HomeView.swift */; };
+		C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5342919AF0600DB2CBB /* OptionsView.swift */; };
+		C9F0C5372919C08B00DB2CBB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C5362919C08B00DB2CBB /* CalendarView.swift */; };
+		C9F0C53A2919C61100DB2CBB /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C9F0C5392919C61100DB2CBB /* ElegantCalendar */; };
+		C9F0C5412919DB2E00DB2CBB /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */; };
+		C9F0C5442919EFC200DB2CBB /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = C9F0C5432919EFC200DB2CBB /* SwiftDate */; };
+		C9F0C546291A108C00DB2CBB /* DailySongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C545291A108C00DB2CBB /* DailySongView.swift */; };
+		C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */; };
+		C9F0C54A291A3F1100DB2CBB /* CalendarBlankDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */; };
+		C9F0C54C291A48F000DB2CBB /* SearchResultTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C54B291A48F000DB2CBB /* SearchResultTrackView.swift */; };
+		C9F0C54E291A4B4D00DB2CBB /* DailySongConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0C54D291A4B4D00DB2CBB /* DailySongConfirmationView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		789657A0293FA1A500D88AC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9888AE128FB9619002C17A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9888AE828FB9619002C17A7;
+			remoteInfo = Songbird;
+		};
+		789B95352942434400E5E4AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9888AE128FB9619002C17A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9888AE828FB9619002C17A7;
+			remoteInfo = Songbird;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7896579C293FA1A500D88AC9 /* SongbirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SongbirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		789B95312942434400E5E4AD /* SongbirdUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SongbirdUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		789B95332942434400E5E4AD /* SongbirdUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongbirdUnitTest.swift; sourceTree = "<group>"; };
+		C978D098290734B20077CA6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C978D09C290743AE0077CA6C /* Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
+		C978D0AC290786CE0077CA6C /* PlaylistsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsListView.swift; sourceTree = "<group>"; };
+		C978D0AD290786CE0077CA6C /* PlaylistCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistCellView.swift; sourceTree = "<group>"; };
+		C978D0AE290786CE0077CA6C /* DebugMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuView.swift; sourceTree = "<group>"; };
+		C978D0AF290786CE0077CA6C /* TrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+		C978D0B0290786CE0077CA6C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C978D0B1290786CE0077CA6C /* SearchForTracksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchForTracksView.swift; sourceTree = "<group>"; };
+		C978D0B3290786CE0077CA6C /* RootTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		C978D0B5290786CE0077CA6C /* SavedAlbumsGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedAlbumsGridView.swift; sourceTree = "<group>"; };
+		C978D0B6290786CE0077CA6C /* AlbumTrackCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTrackCellView.swift; sourceTree = "<group>"; };
+		C978D0B7290786CE0077CA6C /* AlbumGridItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumGridItemView.swift; sourceTree = "<group>"; };
+		C978D0B8290786CE0077CA6C /* AlbumTracksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTracksView.swift; sourceTree = "<group>"; };
+		C978D0B9290786CE0077CA6C /* RecentlyPlayedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedView.swift; sourceTree = "<group>"; };
+		C978D0C72907874E0077CA6C /* PlaylistDeduplicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistDeduplicator.swift; sourceTree = "<group>"; };
+		C978D0CA290787B50077CA6C /* MiscellaneousUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscellaneousUtilities.swift; sourceTree = "<group>"; };
+		C978D0CB290787B50077CA6C /* ImageNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNames.swift; sourceTree = "<group>"; };
+		C978D0CC290787B50077CA6C /* SpotifyAPIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyAPIExtensions.swift; sourceTree = "<group>"; };
+		C978D0CD290787B50077CA6C /* AlertItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
+		C9888AE928FB9619002C17A7 /* Songbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Songbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongbirdApp.swift; sourceTree = "<group>"; };
+		C9888AEE28FB9619002C17A7 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		C9888AF028FB9620002C17A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9888B0628FBB9F6002C17A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C9888B0928FBBAF5002C17A7 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
+		C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSearchView.swift; sourceTree = "<group>"; };
+		C9F0C5322919ADBA00DB2CBB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C9F0C5342919AF0600DB2CBB /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		C9F0C5362919C08B00DB2CBB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../../../Library/Developer/Xcode/DerivedData/Songbird-btykodcoleugwmekbrskuxyrjfjw/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
+		C9F0C545291A108C00DB2CBB /* DailySongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongView.swift; sourceTree = "<group>"; };
+		C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSongView.swift; sourceTree = "<group>"; };
+		C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBlankDayView.swift; sourceTree = "<group>"; };
+		C9F0C54B291A48F000DB2CBB /* SearchResultTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTrackView.swift; sourceTree = "<group>"; };
+		C9F0C54D291A4B4D00DB2CBB /* DailySongConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySongConfirmationView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78965799293FA1A500D88AC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		789B952E2942434400E5E4AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9888AE628FB9619002C17A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9888AFC28FBA054002C17A7 /* FirebaseFirestore in Frameworks */,
+				C978D09B29073D190077CA6C /* SpotifyAPI in Frameworks */,
+				C9F0C5442919EFC200DB2CBB /* SwiftDate in Frameworks */,
+				C9888AFE28FBA054002C17A7 /* FirebaseFirestoreSwift in Frameworks */,
+				C9F0C53A2919C61100DB2CBB /* ElegantCalendar in Frameworks */,
+				C978D0A02907456B0077CA6C /* KeychainAccess in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		789B95322942434400E5E4AD /* SongbirdUnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				789B95332942434400E5E4AD /* SongbirdUnitTest.swift */,
+			);
+			path = SongbirdUnitTest;
+			sourceTree = "<group>";
+		};
+		C978D0A7290786380077CA6C /* ExampleViews */ = {
+			isa = PBXGroup;
+			children = (
+				C978D0B4290786CE0077CA6C /* Album Views */,
+				C978D0B9290786CE0077CA6C /* RecentlyPlayedView.swift */,
+				C978D0AB290786CE0077CA6C /* Playlist Views */,
+				C978D0AE290786CE0077CA6C /* DebugMenuView.swift */,
+				C978D0AF290786CE0077CA6C /* TrackView.swift */,
+				C978D0B1290786CE0077CA6C /* SearchForTracksView.swift */,
+			);
+			path = ExampleViews;
+			sourceTree = "<group>";
+		};
+		C978D0A8290786470077CA6C /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				C9888B0928FBBAF5002C17A7 /* UserCollection.swift */,
+				C9888B0628FBB9F6002C17A7 /* User.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		C978D0A92907866C0077CA6C /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				C978D09C290743AE0077CA6C /* Spotify.swift */,
+				C978D0C72907874E0077CA6C /* PlaylistDeduplicator.swift */,
+			);
+			path = Spotify;
+			sourceTree = "<group>";
+		};
+		C978D0AB290786CE0077CA6C /* Playlist Views */ = {
+			isa = PBXGroup;
+			children = (
+				C978D0AC290786CE0077CA6C /* PlaylistsListView.swift */,
+				C978D0AD290786CE0077CA6C /* PlaylistCellView.swift */,
+			);
+			path = "Playlist Views";
+			sourceTree = "<group>";
+		};
+		C978D0B4290786CE0077CA6C /* Album Views */ = {
+			isa = PBXGroup;
+			children = (
+				C978D0B5290786CE0077CA6C /* SavedAlbumsGridView.swift */,
+				C978D0B6290786CE0077CA6C /* AlbumTrackCellView.swift */,
+				C978D0B7290786CE0077CA6C /* AlbumGridItemView.swift */,
+				C978D0B8290786CE0077CA6C /* AlbumTracksView.swift */,
+			);
+			path = "Album Views";
+			sourceTree = "<group>";
+		};
+		C978D0C9290787B50077CA6C /* Project Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C978D0CA290787B50077CA6C /* MiscellaneousUtilities.swift */,
+				C978D0CB290787B50077CA6C /* ImageNames.swift */,
+				C978D0CC290787B50077CA6C /* SpotifyAPIExtensions.swift */,
+				C978D0CD290787B50077CA6C /* AlertItem.swift */,
+			);
+			path = "Project Utilities";
+			sourceTree = "<group>";
+		};
+		C978D0D229078C2B0077CA6C /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				C9888B0228FBAD42002C17A7 /* GoogleService-Info.plist */,
+				C978D098290734B20077CA6C /* Info.plist */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		C978D0E729078CF30077CA6C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9888AE028FB9619002C17A7 = {
+			isa = PBXGroup;
+			children = (
+				C9F0C5402919DB2E00DB2CBB /* ElegantCalendar.xcassets */,
+				C9888AEB28FB9619002C17A7 /* Songbird */,
+				789B95322942434400E5E4AD /* SongbirdUnitTest */,
+				C9888AEA28FB9619002C17A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9888AEA28FB9619002C17A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9888AE928FB9619002C17A7 /* Songbird.app */,
+				7896579C293FA1A500D88AC9 /* SongbirdTests.xctest */,
+				789B95312942434400E5E4AD /* SongbirdUnitTest.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9888AEB28FB9619002C17A7 /* Songbird */ = {
+			isa = PBXGroup;
+			children = (
+				C978D0E729078CF30077CA6C /* Preview Content */,
+				C978D0D229078C2B0077CA6C /* Configs */,
+				C978D0C9290787B50077CA6C /* Project Utilities */,
+				C9888B0528FBB9CD002C17A7 /* Views */,
+				C9888B0428FBB9C7002C17A7 /* Models */,
+				C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */,
+				C9888AF028FB9620002C17A7 /* Assets.xcassets */,
+			);
+			path = Songbird;
+			sourceTree = "<group>";
+		};
+		C9888B0428FBB9C7002C17A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C978D0A92907866C0077CA6C /* Spotify */,
+				C978D0A8290786470077CA6C /* Firebase */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9888B0528FBB9CD002C17A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0C52F2919A9A300DB2CBB /* Options */,
+				C9F0C52E2919A99900DB2CBB /* Calendar */,
+				C9F0C52D2919A71100DB2CBB /* Home */,
+				C978D0A7290786380077CA6C /* ExampleViews */,
+				C9888AEE28FB9619002C17A7 /* RootView.swift */,
+				C978D0B3290786CE0077CA6C /* RootTabView.swift */,
+				C978D0B0290786CE0077CA6C /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9F0C52D2919A71100DB2CBB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0C5302919AB9700DB2CBB /* SongSearchView.swift */,
+				C9F0C5322919ADBA00DB2CBB /* HomeView.swift */,
+				C9F0C545291A108C00DB2CBB /* DailySongView.swift */,
+				C9F0C54B291A48F000DB2CBB /* SearchResultTrackView.swift */,
+				C9F0C54D291A4B4D00DB2CBB /* DailySongConfirmationView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C9F0C52E2919A99900DB2CBB /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0C5362919C08B00DB2CBB /* CalendarView.swift */,
+				C9F0C547291A339F00DB2CBB /* CalendarSongView.swift */,
+				C9F0C549291A3F1100DB2CBB /* CalendarBlankDayView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		C9F0C52F2919A9A300DB2CBB /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0C5342919AF0600DB2CBB /* OptionsView.swift */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7896579B293FA1A500D88AC9 /* SongbirdTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 789657A4293FA1A500D88AC9 /* Build configuration list for PBXNativeTarget "SongbirdTests" */;
+			buildPhases = (
+				78965798293FA1A500D88AC9 /* Sources */,
+				78965799293FA1A500D88AC9 /* Frameworks */,
+				7896579A293FA1A500D88AC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				789657A1293FA1A500D88AC9 /* PBXTargetDependency */,
+			);
+			name = SongbirdTests;
+			productName = SongbirdTests;
+			productReference = 7896579C293FA1A500D88AC9 /* SongbirdTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		789B95302942434400E5E4AD /* SongbirdUnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 789B95372942434400E5E4AD /* Build configuration list for PBXNativeTarget "SongbirdUnitTest" */;
+			buildPhases = (
+				789B952D2942434400E5E4AD /* Sources */,
+				789B952E2942434400E5E4AD /* Frameworks */,
+				789B952F2942434400E5E4AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				789B95362942434400E5E4AD /* PBXTargetDependency */,
+			);
+			name = SongbirdUnitTest;
+			productName = SongbirdUnitTest;
+			productReference = 789B95312942434400E5E4AD /* SongbirdUnitTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C9888AE828FB9619002C17A7 /* Songbird */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9888AF728FB9620002C17A7 /* Build configuration list for PBXNativeTarget "Songbird" */;
+			buildPhases = (
+				C9888AE528FB9619002C17A7 /* Sources */,
+				C9888AE628FB9619002C17A7 /* Frameworks */,
+				C9888AE728FB9619002C17A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Songbird;
+			packageProductDependencies = (
+				C9888AFB28FBA054002C17A7 /* FirebaseFirestore */,
+				C9888AFD28FBA054002C17A7 /* FirebaseFirestoreSwift */,
+				C978D09A29073D190077CA6C /* SpotifyAPI */,
+				C978D09F2907456B0077CA6C /* KeychainAccess */,
+				C9F0C5392919C61100DB2CBB /* ElegantCalendar */,
+				C9F0C5432919EFC200DB2CBB /* SwiftDate */,
+			);
+			productName = Songbird;
+			productReference = C9888AE928FB9619002C17A7 /* Songbird.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9888AE128FB9619002C17A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					7896579B293FA1A500D88AC9 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = C9888AE828FB9619002C17A7;
+					};
+					789B95302942434400E5E4AD = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = C9888AE828FB9619002C17A7;
+					};
+					C9888AE828FB9619002C17A7 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+				};
+			};
+			buildConfigurationList = C9888AE428FB9619002C17A7 /* Build configuration list for PBXProject "Songbird" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9888AE028FB9619002C17A7;
+			packageReferences = (
+				C9888AFA28FBA054002C17A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C978D09929073D190077CA6C /* XCRemoteSwiftPackageReference "SpotifyAPI" */,
+				C978D09E2907456B0077CA6C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				C9F0C5382919C61100DB2CBB /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
+				C9F0C5422919EFC100DB2CBB /* XCRemoteSwiftPackageReference "SwiftDate" */,
+			);
+			productRefGroup = C9888AEA28FB9619002C17A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9888AE828FB9619002C17A7 /* Songbird */,
+				7896579B293FA1A500D88AC9 /* SongbirdTests */,
+				789B95302942434400E5E4AD /* SongbirdUnitTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7896579A293FA1A500D88AC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		789B952F2942434400E5E4AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9888AE728FB9619002C17A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9888AF128FB9620002C17A7 /* Assets.xcassets in Resources */,
+				C9888B0328FBAD42002C17A7 /* GoogleService-Info.plist in Resources */,
+				C9F0C5412919DB2E00DB2CBB /* ElegantCalendar.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78965798293FA1A500D88AC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		789B952D2942434400E5E4AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				789B95342942434400E5E4AD /* SongbirdUnitTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9888AE528FB9619002C17A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C978D0C6290786CE0077CA6C /* RecentlyPlayedView.swift in Sources */,
+				C9888AEF28FB9619002C17A7 /* RootView.swift in Sources */,
+				C978D0D1290787B50077CA6C /* AlertItem.swift in Sources */,
+				C978D0BF290786CE0077CA6C /* SearchForTracksView.swift in Sources */,
+				C9F0C54E291A4B4D00DB2CBB /* DailySongConfirmationView.swift in Sources */,
+				C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */,
+				C978D0D0290787B50077CA6C /* SpotifyAPIExtensions.swift in Sources */,
+				C9F0C5372919C08B00DB2CBB /* CalendarView.swift in Sources */,
+				C9888B0A28FBBAF5002C17A7 /* UserCollection.swift in Sources */,
+				C978D0BC290786CE0077CA6C /* DebugMenuView.swift in Sources */,
+				C9F0C5352919AF0600DB2CBB /* OptionsView.swift in Sources */,
+				C978D0C2290786CE0077CA6C /* SavedAlbumsGridView.swift in Sources */,
+				C978D0BB290786CE0077CA6C /* PlaylistCellView.swift in Sources */,
+				C978D0C1290786CE0077CA6C /* RootTabView.swift in Sources */,
+				C978D0C4290786CE0077CA6C /* AlbumGridItemView.swift in Sources */,
+				C978D0BA290786CE0077CA6C /* PlaylistsListView.swift in Sources */,
+				C9F0C54A291A3F1100DB2CBB /* CalendarBlankDayView.swift in Sources */,
+				C978D0CE290787B50077CA6C /* MiscellaneousUtilities.swift in Sources */,
+				C978D0C5290786CE0077CA6C /* AlbumTracksView.swift in Sources */,
+				C978D0C82907874E0077CA6C /* PlaylistDeduplicator.swift in Sources */,
+				C9F0C546291A108C00DB2CBB /* DailySongView.swift in Sources */,
+				C978D0CF290787B50077CA6C /* ImageNames.swift in Sources */,
+				C978D09D290743AE0077CA6C /* Spotify.swift in Sources */,
+				C978D0BE290786CE0077CA6C /* LoginView.swift in Sources */,
+				C978D0BD290786CE0077CA6C /* TrackView.swift in Sources */,
+				C9888B0728FBB9F6002C17A7 /* User.swift in Sources */,
+				C9F0C54C291A48F000DB2CBB /* SearchResultTrackView.swift in Sources */,
+				C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */,
+				C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */,
+				C9F0C5312919AB9700DB2CBB /* SongSearchView.swift in Sources */,
+				C978D0C3290786CE0077CA6C /* AlbumTrackCellView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		789657A1293FA1A500D88AC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9888AE828FB9619002C17A7 /* Songbird */;
+			targetProxy = 789657A0293FA1A500D88AC9 /* PBXContainerItemProxy */;
+		};
+		789B95362942434400E5E4AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9888AE828FB9619002C17A7 /* Songbird */;
+			targetProxy = 789B95352942434400E5E4AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		789657A2293FA1A500D88AC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Lab.SongbirdTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Songbird.app/Songbird";
+			};
+			name = Debug;
+		};
+		789657A3293FA1A500D88AC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Lab.SongbirdTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Songbird.app/Songbird";
+			};
+			name = Release;
+		};
+		789B95382942434400E5E4AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Lab.SongbirdUnitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Songbird.app/Songbird";
+			};
+			name = Debug;
+		};
+		789B95392942434400E5E4AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Lab.SongbirdUnitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Songbird.app/Songbird";
+			};
+			name = Release;
+		};
+		C9888AF528FB9620002C17A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9888AF628FB9620002C17A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9888AF828FB9620002C17A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Songbird/Preview Content\"";
+				DEVELOPMENT_TEAM = J7782HF2UB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Songbird/Configs/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-43-f22-team20.Songbird";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C9888AF928FB9620002C17A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Songbird/Preview Content\"";
+				DEVELOPMENT_TEAM = J7782HF2UB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Songbird/Configs/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-43-f22-team20.Songbird";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		789657A4293FA1A500D88AC9 /* Build configuration list for PBXNativeTarget "SongbirdTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				789657A2293FA1A500D88AC9 /* Debug */,
+				789657A3293FA1A500D88AC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		789B95372942434400E5E4AD /* Build configuration list for PBXNativeTarget "SongbirdUnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				789B95382942434400E5E4AD /* Debug */,
+				789B95392942434400E5E4AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9888AE428FB9619002C17A7 /* Build configuration list for PBXProject "Songbird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9888AF528FB9620002C17A7 /* Debug */,
+				C9888AF628FB9620002C17A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9888AF728FB9620002C17A7 /* Build configuration list for PBXNativeTarget "Songbird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9888AF828FB9620002C17A7 /* Debug */,
+				C9888AF928FB9620002C17A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C978D09929073D190077CA6C /* XCRemoteSwiftPackageReference "SpotifyAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Peter-Schorn/SpotifyAPI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		C978D09E2907456B0077CA6C /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C9888AFA28FBA054002C17A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		C9F0C5382919C61100DB2CBB /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThasianX/ElegantCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		C9F0C5422919EFC100DB2CBB /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C978D09A29073D190077CA6C /* SpotifyAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C978D09929073D190077CA6C /* XCRemoteSwiftPackageReference "SpotifyAPI" */;
+			productName = SpotifyAPI;
+		};
+		C978D09F2907456B0077CA6C /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C978D09E2907456B0077CA6C /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		C9888AFB28FBA054002C17A7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9888AFA28FBA054002C17A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		C9888AFD28FBA054002C17A7 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9888AFA28FBA054002C17A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		C9F0C5392919C61100DB2CBB /* ElegantCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9F0C5382919C61100DB2CBB /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
+			productName = ElegantCalendar;
+		};
+		C9F0C5432919EFC200DB2CBB /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9F0C5422919EFC100DB2CBB /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C9888AE128FB9619002C17A7 /* Project object */;
+}

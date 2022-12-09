@@ -70,25 +70,21 @@ struct PlaylistDatePickerView: View {
         for (date, song) in daily_songs! {
             let d = dateFormatter.date(from: date)
             print("spotify:track:\(song.spotify_id)")
-            if (startDate ... endDate).contains(d!) {
-                print(d!)
+            if d != nil && (startDate ... endDate).contains(d!) {
                 songs.append("spotify:track:\(song.spotify_id)")
             }
         }
         
-		print("Songs to Add: \n")
-        print(daily_songs!)
-        print(songs)
-        
 		let user = appState.spotify.currentUser
 		
 		if (user != nil){
-			let playlistInfo = PlaylistDetails(name:"New Playlist from SongBird")
+			let playlistInfo = PlaylistDetails(name:"New Songbird Playlist")
 //                                               ,
 //                                               description: "Generated on \(Date.now.formatted(date: .abbreviated, time: .omitted)) via the SongBird App! Contains songs picked from \(startDate.formatted(date: .abbreviated, time: .omitted)) to \(endDate.formatted(date: .abbreviated, time: .omitted))")
             
             appState.spotify.api.createPlaylist(for: user!.uri, playlistInfo)
                 .sink(receiveCompletion: { _ in
+                        print("done!!")
                 }, receiveValue: {playlist in
                     self.playlist = playlist
                     appState.spotify.api.addToPlaylist(playlist.uri, uris: songs)

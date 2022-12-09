@@ -1,5 +1,5 @@
 // Based on: https://github.com/Peter-Schorn/SpotifyAPIExampleApp/blob/main/SpotifyAPIExampleApp/Model/Spotify.swift
-// by Peter Schorn
+// by Peter Schorn 
 
 import SwiftUI
 

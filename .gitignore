@@ -89,6 +89,8 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+# Config files with secrets
+*/GoogleService-Info.plist
 
 # OS X Temp Files
 *.DS_Store

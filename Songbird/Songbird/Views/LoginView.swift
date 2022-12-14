@@ -30,7 +30,6 @@ struct LoginView: ViewModifier {
 
 		@EnvironmentObject var appState: AppState
 		@Binding var shouldShow: Bool // should be appState.spotify.isAuthorized
-		                              // Don't know why but using a binding is more reliable than referencing the env object
 
     /// After the app first launches, add a short delay before showing this view
     /// so that the animation can be seen.

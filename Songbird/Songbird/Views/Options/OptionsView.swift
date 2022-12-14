@@ -9,6 +9,11 @@ import SwiftUI
 import Combine
 import SpotifyWebAPI
 
+
+// Known Bug:
+// When user logs out and logs back in, app freezes sometimes. Seems to be because of requests that
+// get run while the app is in the background. Solution is probably to open the url in a web view
+// so the app never gets backgrounded or to handle requests differently
 struct OptionsView: View {
 	
 	@EnvironmentObject var appState: AppState
@@ -42,7 +47,7 @@ struct OptionsView: View {
 				/// `SpotifyAPI.authorizationManagerDidDeauthorize` to emit a signal,
 				/// which will cause `Spotify.authorizationManagerDidDeauthorize()` to be
 				/// called.
-				Button(action: appState.spotify.api.authorizationManager.deauthorize, label: {
+				Button(action: logout, label: {
 					Text("Logout")
 						.foregroundColor(.white)
 						.padding(10)
@@ -59,6 +64,8 @@ struct OptionsView: View {
 			.onAppear(perform: loadImage)
 			.navigationBarTitle("Profile")
 		}
+		.disabled(!appState.spotify.isAuthorized)
+		.modifier(LoginView(shouldShow: $appState.spotify.isAuthorized))
 	}
 	
 	/// Loads the image for the user
@@ -93,5 +100,11 @@ struct OptionsView: View {
 									self.image = image
 							}
 					)
+	}
+	
+	func logout(){
+		self.image = Image(systemName: "person.circle")
+		appState.spotify.api.authorizationManager.deauthorize()
+		appState.selectedTab = 3 // forces refresh which pops the login button up
 	}
 }

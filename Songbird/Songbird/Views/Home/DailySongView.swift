@@ -108,5 +108,6 @@ struct DailySongView: View {
 	func deleteDailySong() {
 		appState.currentUser?.user.daily_songs.removeValue(forKey: "\(Date().month)-\(Date().day)-\(Date().year)")
 		appState.currentUser?.updateCurrentUserInFirestore()
+		appState.selectedTab = 0 // forces view to refresh
 	}
 }

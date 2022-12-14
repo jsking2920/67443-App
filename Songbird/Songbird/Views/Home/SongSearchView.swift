@@ -64,7 +64,7 @@ struct SongSearchView: View {
 				}
 				Spacer()
 			}
-			.navigationTitle("Search")
+			.navigationTitle("Find Today's Song")
 			.alert(item: $alert) { alert in
 				Alert(title: alert.title, message: alert.message)
 			}

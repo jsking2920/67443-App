@@ -13,7 +13,8 @@ import SwiftDate
 
 struct CalendarView: View {
 	
-	@EnvironmentObject var appState: AppState
+	// @EnvironmentObject var appState: AppState
+	var songs : Dictionary<String, DailySong>
 
 	@ObservedObject var calendarManager =
 		ElegantCalendarManager(
@@ -23,18 +24,20 @@ struct CalendarView: View {
 			),
 			initialMonth: Date() // this month
 		)
-
+	
+	// Not the cleanest way to go about this but it works every time unlike appState
+	init(songDict: Dictionary<String, DailySong>) {
+		songs = songDict
+		calendarManager.datasource = self
+	}
+	
 	var body: some View {
         ZStack{
             ElegantCalendarView(calendarManager: calendarManager)
                 .theme(CalendarTheme(primary: Color(red: 0x1D/256, green: 0xB9/256, blue: 0x54/256), textColor: .white, todayTextColor: .white, todayBackgroundColor: .blue))
                 .onAppear(perform: {calendarManager.datasource = self})
         }
-        .padding([.top], 70)
-		// Doing all the operations to determine which days should be clickable, etc. on appear here
-		// makes this view very slow to load. Could set the datasource in init, but then the userCollection
-		// has to be passed in since environmentObjects aren't initialized until the body, which also means
-		// the calendar won't update since the userCollection is
+        .padding([.top], 100)
 	}
 }
 	
@@ -54,7 +57,8 @@ extension CalendarView: ElegantCalendarDataSource {
 	}
 	
 	func calendar(backgroundColorOpacityForDate date: Date) -> Double {
-		let song: DailySong? = appState.currentUser?.user.daily_songs["\(date.month)-\(date.day)-\(date.year)"]
+		//let song: DailySong? = appState.currentUser?.user.daily_songs["\(date.month)-\(date.day)-\(date.year)"]
+		let song: DailySong? = songs["\(date.month)-\(date.day)-\(date.year)"]
 		
 		if (song == nil) {
 			return 0.4
@@ -65,11 +69,12 @@ extension CalendarView: ElegantCalendarDataSource {
 	}
 	
 	func calendar(viewForSelectedDate date: Date, dimensions size: CGSize) -> AnyView {
-		let song: DailySong? = appState.currentUser?.user.daily_songs["\(date.month)-\(date.day)-\(date.year)"]
+		//let song: DailySong? = appState.currentUser?.user.daily_songs["\(date.month)-\(date.day)-\(date.year)"]
+		let song: DailySong? = songs["\(date.month)-\(date.day)-\(date.year)"]
 		
 		if (song == nil) {
-			if (date.isToday) { return CalendarBlankDayView(s: "You haven't picked a song yet!").erased }
-			return CalendarBlankDayView().erased
+			if (date.isToday) { return CalendarBlankDayView(s: "You haven't picked a song yet!", b: true).erased }
+			return CalendarBlankDayView(b: false).erased
 		}
 		return CalendarSongView(song: song!).erased
 	}

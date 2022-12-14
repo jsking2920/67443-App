@@ -18,10 +18,10 @@ struct RootTabView: View {
 					Label("Home", systemImage: "house")
 					Text("Home")
 				}.tag(0)
-				CalendarView().tabItem {
+				CalendarView(songDict: appState.currentUser?.user.daily_songs ?? Dictionary<String, DailySong>()).tabItem {
 					Label("History", systemImage: "calendar")
 					Text("History")
-				}.tag(1)
+				}.tag(1).environmentObject(appState)
 				PlaylistView().tabItem{
 					Label("Playlists", systemImage: "music.note.list")
 					Text("Playlists")

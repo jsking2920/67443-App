@@ -115,10 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				C978D0B4290786CE0077CA6C /* Album Views */,
-				C978D0B9290786CE0077CA6C /* RecentlyPlayedView.swift */,
 				C978D0AB290786CE0077CA6C /* Playlist Views */,
 				C978D0AE290786CE0077CA6C /* DebugMenuView.swift */,
-				C978D0AF290786CE0077CA6C /* TrackView.swift */,
 				C978D0B1290786CE0077CA6C /* SearchForTracksView.swift */,
 			);
 			path = ExampleViews;
@@ -189,6 +187,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C97CBC8E294AD7BB007821C9 /* Reccomendations */ = {
+			isa = PBXGroup;
+			children = (
+				C978D0B9290786CE0077CA6C /* RecentlyPlayedView.swift */,
+				C978D0AF290786CE0077CA6C /* TrackView.swift */,
+			);
+			path = Reccomendations;
+			sourceTree = "<group>";
+		};
 		C9888AE028FB9619002C17A7 = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +240,7 @@
 		C9888B0528FBB9CD002C17A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C97CBC8E294AD7BB007821C9 /* Reccomendations */,
 				EBB641FE291DD57A00F07BEF /* Playlists */,
 				C9F0C52F2919A9A300DB2CBB /* Options */,
 				C9F0C52E2919A99900DB2CBB /* Calendar */,

@@ -1,4 +1,4 @@
-// Taken from: https://github.com/Peter-Schorn/SpotifyAPIExampleApp/blob/main/SpotifyAPIExampleApp/Model/Spotify.swift
+// from: https://github.com/Peter-Schorn/SpotifyAPIExampleApp/blob/main/SpotifyAPIExampleApp/Model/Spotify.swift
 // by Peter Schorn
 
 import SwiftUI
@@ -86,8 +86,6 @@ struct RecentlyPlayedView: View {
         .alert(item: $alert) { alert in
             Alert(title: alert.title, message: alert.message)
         }
-        
-        
     }
     
     var refreshButton: some View {
@@ -97,9 +95,7 @@ struct RecentlyPlayedView: View {
                 .scaleEffect(0.8)
         }
         .disabled(isLoadingPage)
-        
     }
-
 }
 
 extension RecentlyPlayedView {

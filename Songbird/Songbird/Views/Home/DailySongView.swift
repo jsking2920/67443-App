@@ -15,7 +15,7 @@ struct DailySongView: View {
 	var song: DailySong
 	
 	/// song's album art and Track object
-	@State private var track = Track.faces // gven example track used as a placeholder
+	@State private var track = Track.faces // given example track used as a placeholder
 	@State private var image = Image(systemName: "doc")
 	@State private var didRequestImage = false
 	
@@ -27,7 +27,7 @@ struct DailySongView: View {
 	
 	var body: some View {
 		VStack{
-			Text("Today's Pick").font(.headline).fontWeight(.heavy).padding()
+			Text("Today's Pick").scaledToFit().frame(width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.width * 0.2).font(.headline).padding()
 			image
 				.resizable()
 				.scaledToFit()

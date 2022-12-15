@@ -35,9 +35,11 @@ struct SongSearchView: View {
 			VStack {
 				searchBar
 					.padding([.top, .horizontal])
-				Text("Tap on a track to choose it.")
-					.font(.caption)
-					.foregroundColor(.secondary)
+				if (!tracks.isEmpty){
+					Text("Tap on a track to choose it.")
+						.font(.caption)
+						.foregroundColor(.secondary)
+				}
 				Spacer()
 				if tracks.isEmpty {
 					if isSearching {
@@ -50,9 +52,27 @@ struct SongSearchView: View {
 						}
 					}
 					else {
-						Text("No Results")
-							.font(.title)
-							.foregroundColor(.secondary)
+						// Reccomendations categories
+						VStack {
+							Text("Our Recommendations").font(.headline)
+							List {
+								NavigationLink( destination: RecentlyPlayedView().environmentObject(appState.spotify),
+																label: {
+																	Text("What you've been listening to")
+																		.foregroundColor(.white)
+								})
+								NavigationLink( destination: RecentlyPlayedView().environmentObject(appState.spotify),
+																label: {
+																	Text("What you've been listening to")
+																		.foregroundColor(.white)
+								})
+								NavigationLink( destination: RecentlyPlayedView().environmentObject(appState.spotify),
+																label: {
+																	Text("What you've been listening to")
+																		.foregroundColor(.white)
+								})
+							}
+						}
 					}
 				}
 				else {

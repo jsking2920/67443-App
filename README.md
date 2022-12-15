@@ -9,7 +9,10 @@ for our Spotify Web API app, which will require an email associated with a Spoti
 Playlists created with Spotify's web API can take a few minutes to become 
 visible in the Spotify App or web player, even though they have been created. This lag is purely 
 on Spotify's end. Force quitting the Spotify app and reopening it will make it pull newly 
-created playlists from the server.
+created playlists from the server. <br>
+
+To better test out the calendar feature, ping Scott and Shayan in our slack channel so that we can add some fake songs
+to your history in firebase as though you had chosen a song on those days. <br>
 
 ### Attributions
 - Built with SpotifyAPI by Peter Schorn (https://github.com/Peter-Schorn/SpotifyAPI)

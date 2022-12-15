@@ -28,6 +28,7 @@
 		C978D0CF290787B50077CA6C /* ImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0CB290787B50077CA6C /* ImageNames.swift */; };
 		C978D0D0290787B50077CA6C /* SpotifyAPIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0CC290787B50077CA6C /* SpotifyAPIExtensions.swift */; };
 		C978D0D1290787B50077CA6C /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978D0CD290787B50077CA6C /* AlertItem.swift */; };
+		C97CBC92294AEEF3007821C9 /* UserTopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CBC91294AEEF3007821C9 /* UserTopTracksView.swift */; };
 		C9888AED28FB9619002C17A7 /* SongbirdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */; };
 		C9888AEF28FB9619002C17A7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9888AEE28FB9619002C17A7 /* RootView.swift */; };
 		C9888AF128FB9620002C17A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9888AF028FB9620002C17A7 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		C978D0CB290787B50077CA6C /* ImageNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNames.swift; sourceTree = "<group>"; };
 		C978D0CC290787B50077CA6C /* SpotifyAPIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyAPIExtensions.swift; sourceTree = "<group>"; };
 		C978D0CD290787B50077CA6C /* AlertItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
+		C97CBC91294AEEF3007821C9 /* UserTopTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTopTracksView.swift; sourceTree = "<group>"; };
 		C9888AE928FB9619002C17A7 /* Songbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Songbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9888AEC28FB9619002C17A7 /* SongbirdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongbirdApp.swift; sourceTree = "<group>"; };
 		C9888AEE28FB9619002C17A7 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				C978D0B9290786CE0077CA6C /* RecentlyPlayedView.swift */,
 				C978D0AF290786CE0077CA6C /* TrackView.swift */,
+				C97CBC91294AEEF3007821C9 /* UserTopTracksView.swift */,
 			);
 			path = Reccomendations;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				C978D0BD290786CE0077CA6C /* TrackView.swift in Sources */,
 				C9888B0728FBB9F6002C17A7 /* User.swift in Sources */,
 				EBB641FD291DD53E00F07BEF /* PlaylistView.swift in Sources */,
+				C97CBC92294AEEF3007821C9 /* UserTopTracksView.swift in Sources */,
 				C9F0C54C291A48F000DB2CBB /* SearchResultTrackView.swift in Sources */,
 				C9F0C5332919ADBA00DB2CBB /* HomeView.swift in Sources */,
 				C9F0C548291A339F00DB2CBB /* CalendarSongView.swift in Sources */,

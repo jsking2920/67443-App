@@ -61,9 +61,9 @@ struct SongSearchView: View {
 																	Text("What you've been listening to")
 																		.foregroundColor(.white)
 								})
-								NavigationLink( destination: RecentlyPlayedView().environmentObject(appState.spotify),
+								NavigationLink( destination: UserTopTracksView().environmentObject(appState.spotify),
 																label: {
-																	Text("What you've been listening to")
+																	Text("Your favorites")
 																		.foregroundColor(.white)
 								})
 								NavigationLink( destination: RecentlyPlayedView().environmentObject(appState.spotify),

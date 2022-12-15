@@ -1,4 +1,4 @@
-// from: https://github.com/Peter-Schorn/SpotifyAPIExampleApp/blob/main/SpotifyAPIExampleApp/Model/Spotify.swift
+// from: https://github.com/Peter-Schorn/SpotifyAPIExampleApp/blob/main/SpotifyAPIExampleApp/
 // by Peter Schorn
 
 import SwiftUI
@@ -6,6 +6,7 @@ import Combine
 import SpotifyWebAPI
 import SpotifyExampleContent
 
+// Only shows tracks that have been played for more than 30 seconds
 struct RecentlyPlayedView: View {
     
     @EnvironmentObject var spotify: Spotify
@@ -198,22 +199,4 @@ extension RecentlyPlayedView {
         self.isLoadingPage = false
     }
 
-}
-
-struct RecentlyPlayedView_Previews: PreviewProvider {
-    
-    static let tracks: [Track] = [
-        .because, .comeTogether, .faces, .illWind,
-        .odeToViceroy, .reckoner, .theEnd, .time
-    ]
-    
-    static var previews: some View {
-        ForEach([tracks], id: \.self) { tracks in
-            NavigationView {
-                RecentlyPlayedView(recentlyPlayed: tracks)
-                    .listStyle(PlainListStyle())
-            }
-        }
-        .environmentObject(Spotify())
-    }
 }

@@ -64,8 +64,6 @@ struct OptionsView: View {
 			.onAppear(perform: loadImage)
 			.navigationBarTitle("Profile")
 		}
-		.disabled(!appState.spotify.isAuthorized)
-		.modifier(LoginView(shouldShow: $appState.spotify.isAuthorized))
 	}
 	
 	/// Loads the image for the user

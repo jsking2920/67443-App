@@ -7,50 +7,45 @@ import SwiftUI
 import Combine
 
 import SpotifyWebAPI
+import SwiftDate
 
 struct PlaylistDatePickerView: View {
 
 	@EnvironmentObject var appState: AppState
 	
-	@State var startDate = Date()
+	@State var startDate = Date() - 1.days
 	@State var endDate = Date()
 	
 	@State var playlist: Playlist<PlaylistItems>? = nil
+	@State var snapshot_id: String = ""
 	
-	func sorterForDates(this:String, that:String) -> Bool {
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = "MM-DD-YYYY"
-			let d1 = dateFormatter.date(from: this)
-			let d2 = dateFormatter.date(from: that)
-			return d1! > d2!
-	}
-	// solution we figured out : on button press iterate over daily songs and add each to array to display + send off to playlist!!!!
+	// MARK: Cancellables
+	@State private var playlistCancellable: AnyCancellable? = nil
+	@State private var playlistCancellable2: AnyCancellable? = nil
 	
     var body: some View {
         NavigationView {
             ZStack{
                 VStack{
                     Spacer()
-                    DatePicker("Start Date", selection: $startDate,
+                    DatePicker("Start Date",
+															 selection: $startDate,
+															 in: PartialRangeThrough(endDate - 1.days),
                                displayedComponents: [.date])
                     DatePicker("End Date",
                                selection: $endDate,
-                               displayedComponents: [.date])
+															 in: PartialRangeThrough(Date()),
+															 displayedComponents: [.date])
                     Spacer()
-                    Button(action: {
-                        Task {
-                            await createPlaylist()
-                            print("ok tAsk")
-                        }
-                    }, label: {
-                        Text("Create Playlist")
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .background(Color(red: 0x1D/256, green: 0xB9/256, blue: 0x54/256))
-                            .cornerRadius(10)
-                            .shadow(radius: 3)
-                    })
-                    .padding()
+										Button(action: createPlaylist,
+													 label: {
+														 Text("Create Playlist")
+																.foregroundColor(.white)
+																.padding(10)
+																.background(Color(red: 0x1D/256, green: 0xB9/256, blue: 0x54/256))
+																.cornerRadius(10)
+																.shadow(radius: 3)
+														}).padding()
                 }
             }
             .padding()
@@ -58,50 +53,63 @@ struct PlaylistDatePickerView: View {
         .navigationViewStyle(.stack)
     }
 
-	func createPlaylist()  async {
+	func createPlaylist() {
 
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "M-d-yyyy"
-
-		let daily_songs = appState.currentUser?.user.daily_songs
-		var songs: [SpotifyURIConvertible] = []
-
-        
-        for (date, song) in daily_songs! {
-            let d = dateFormatter.date(from: date)
-            print("spotify:track:\(song.spotify_id)")
-            if d != nil && (startDate ... endDate).contains(d!) {
-                songs.append("spotify:track:\(song.spotify_id)")
-            }
-        }
-        
-		let user = appState.spotify.currentUser
+		let user = appState.currentUser?.user
 		
-		if (user != nil){
-			let playlistInfo = PlaylistDetails(name:"New Songbird Playlist")
-//                                               ,
-//                                               description: "Generated on \(Date.now.formatted(date: .abbreviated, time: .omitted)) via the SongBird App! Contains songs picked from \(startDate.formatted(date: .abbreviated, time: .omitted)) to \(endDate.formatted(date: .abbreviated, time: .omitted))")
-            
-            appState.spotify.api.createPlaylist(for: user!.uri, playlistInfo)
-                .sink(receiveCompletion: { _ in
-                        print("done!!")
-                }, receiveValue: {playlist in
-                    self.playlist = playlist
-                    appState.spotify.api.addToPlaylist(playlist.uri, uris: songs)
-                    let url = "www.open.spotify.com/playlist/\(playlist.uri)"
-                    print(playlist.uri)
-                    if let url = URL(string: url) {
-                        UIApplication.shared.open(url)
-                    }
-                    print("ok FN")
-                    
-                })
+		if (user != nil) {
+			appState.selectedTab = 2 // force view refresh
+
+			let daily_songs = user!.daily_songs
+			var songs: [SpotifyURIConvertible] = []
 			
-			if (playlist != nil) {
-				// Note: can only add 100 at a time so check for that
+			// Grab all songs in provided range
+			for (date, song) in daily_songs {
+					
+					// TODO: convert this to use Swift Date instead of this garbage
+					let s = date.split(separator: "-")
+					if (s.count != 3) {
+						print("Found malformed date while creating playlist")
+						return
+					}
+					let d = Date(year: Int(s[2]) ?? 0, month: Int(s[0]) ?? 0, day: Int(s[1]) ?? 0, hour: 0, minute: 0, second: 0)
+					
+					if (startDate ... endDate).contains(d) {
+							songs.append("spotify:track:\(song.spotify_id)")
+					}
 			}
-            print("Done")
+			
+			// Specify playlist meta-data
+			let playlistInfo = PlaylistDetails(name:"Songbird \(startDate.formatted(date: .abbreviated, time: .omitted)) to \(endDate.formatted(date: .abbreviated, time: .omitted))",
+																				 isPublic: true,
+																				 description: "Generated on \(Date.now.formatted(date: .abbreviated, time: .omitted)) via the SongBird App! Contains songs picked from \(startDate.formatted(date: .abbreviated, time: .omitted)) to \(endDate.formatted(date: .abbreviated, time: .omitted))")
+	
+			self.playlistCancellable =
+				appState.spotify.api.createPlaylist(for: appState.spotify.currentUser!.uri, playlistInfo)
+					.receive(on: RunLoop.main)
+					.sink(
+						receiveCompletion: { _ in },
+					  receiveValue: { playlist in
+							self.playlist = playlist
+
+							self.playlistCancellable2 =
+								appState.spotify.api.addToPlaylist(playlist.uri, uris: songs)
+									.receive(on: RunLoop.main)
+									.sink(
+										receiveCompletion: { _ in },
+										receiveValue: {playlist in
+											self.snapshot_id = playlist
+											
+											// Open spotify playlist
+											/*
+											let url = "www.open.spotify.com/playlist/\(playlist.uri)"
+											if let url = URL(string: url) {
+													UIApplication.shared.open(url)
+											}
+											*/
+										}
+									)
+					})
 		}
 	}
 }
- 

@@ -56,19 +56,25 @@ struct SongSearchView: View {
 						VStack {
 							Text("Our Recommendations").font(.headline)
 							List {
+								// Unfinished
+								/* NavigationLink( destination: GetRecommendationsView().environmentObject(appState.spotify),
+																label: {
+																	Text("Top Picks")
+																		.foregroundColor(.white)
+								}) */
 								NavigationLink( destination: RecentlyPlayedView().environmentObject(appState.spotify),
 																label: {
-																	Text("What you've been listening to")
+																	Text("Recently Played")
 																		.foregroundColor(.white)
 								})
-								NavigationLink( destination: UserTopTracksView().environmentObject(appState.spotify),
+								NavigationLink( destination: UserTopTracksView(TimeRange.shortTerm).environmentObject(appState.spotify),
 																label: {
-																	Text("Your favorites")
+																	Text("Recent Favorites")
 																		.foregroundColor(.white)
 								})
-								NavigationLink( destination: RecentlyPlayedView().environmentObject(appState.spotify),
+								NavigationLink( destination: UserTopTracksView(TimeRange.longTerm).environmentObject(appState.spotify),
 																label: {
-																	Text("What you've been listening to")
+																	Text("All-time Favorites")
 																		.foregroundColor(.white)
 								})
 							}

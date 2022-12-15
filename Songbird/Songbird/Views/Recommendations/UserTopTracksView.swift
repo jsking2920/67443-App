@@ -8,6 +8,8 @@ import SpotifyExampleContent
 
 struct UserTopTracksView: View {
 		
+		var timeRange: TimeRange = TimeRange.longTerm
+		
 		@EnvironmentObject var spotify: Spotify
 
 		@State private var topTracks: [Track]
@@ -20,8 +22,9 @@ struct UserTopTracksView: View {
 		
 		@State private var loadTopTracksCancellable: AnyCancellable? = nil
 
-		init() {
+		init(_ range: TimeRange) {
 				self._topTracks = State(initialValue: [])
+				self.timeRange = range
 		}
 		
 		fileprivate init(topTracks: [Track]) {
@@ -66,8 +69,7 @@ struct UserTopTracksView: View {
 								}
 						}
 				}
-				.navigationTitle("Your Favorites")
-				.navigationBarItems(trailing: refreshButton)
+				.navigationTitle(timeRange == TimeRange.shortTerm ? "Recent Favorites" : "All-time Favorites" )
 				.onAppear {
 						// don't try to load any tracks if we're previewing because sample
 						// tracks have already been provided
@@ -86,15 +88,6 @@ struct UserTopTracksView: View {
 				.alert(item: $alert) { alert in
 						Alert(title: alert.title, message: alert.message)
 				}
-		}
-		
-		var refreshButton: some View {
-				Button(action: self.loadTopTracks) {
-						Image(systemName: "arrow.clockwise")
-								.font(.title)
-								.scaleEffect(0.8)
-				}
-				.disabled(isLoadingPage)
 		}
 }
 
@@ -167,7 +160,7 @@ extension UserTopTracksView {
 				self.topTracks = []
 				
 				self.loadTopTracksCancellable = self.spotify.api
-						.currentUserTopTracks()
+						.currentUserTopTracks(timeRange)
 						.receive(on: RunLoop.main)
 						.sink(
 								receiveCompletion: self.receiveTopTracksCompletion(_:),
